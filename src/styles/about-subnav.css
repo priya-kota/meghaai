@@ -1,0 +1,107 @@
+/* =========================================
+   ABOUT US SECONDARY NAVIGATION
+========================================= */
+
+.about-subnav {
+  position: sticky;
+  top: 62px; /* Adjust based on global navbar height */
+  z-index: 90;
+  width: 100%;
+  background-color: #080914; /* Match site's dark theme */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.about-subnav-container {
+  max-width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.about-subnav-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.about-subnav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+
+.about-subnav-list li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.about-subnav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: #aeb0c5;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.about-subnav-link:hover {
+  color: #ffffff;
+}
+
+.about-subnav-link.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Hover Underline Animation */
+.about-subnav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(135deg, #f66642, #d9294b); /* Brand gradient */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-subnav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Active State Underline */
+.about-subnav-link.active::after {
+  transform: scaleX(1);
+  background: #f66642; /* Solid brand color for active state */
+}
+
+@media (max-width: 768px) {
+  .about-subnav-container {
+    padding: 0 10px;
+  }
+  .about-subnav-list {
+    gap: 25px;
+  }
+  .about-subnav-link {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,3412 @@
+/* =========================================================
+   MEGHAAI — STRUCTURAL HEALTH MONITORING
+   COMPACT RESPONSIVE VERSION
+   LIGHT PEACH / ORANGE BRAND SYSTEM
+   BLACK TYPOGRAPHY
+========================================================= */
+
+.shm-page {
+  --shm-navy: #0e0b3f;
+  --shm-navy-deep: #080726;
+
+  --shm-orange: #f66642;
+  --shm-orange-bright: #ff7a59;
+  --shm-magenta: #d9294b;
+  --shm-coral: #e94a5f;
+
+  --shm-bg: #fdd2b0;
+  --shm-bg-light: #fee0cc;
+
+  --shm-surface: #ffffff;
+  --shm-surface-soft: #fff1e8;
+  --shm-surface-peach: #ffe6d8;
+
+  --shm-text: #000000;
+  --shm-text-soft: #000000;
+  --shm-text-muted: #000000;
+
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: clip;
+
+  color: #000000;
+
+  background:
+    radial-gradient(
+      circle at 92% 5%,
+      rgba(255, 165, 105, 0.68),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 5% 28%,
+      rgba(255, 218, 192, 0.82),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 58% 58%,
+      rgba(255, 225, 205, 0.72),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 80% 92%,
+      rgba(255, 183, 132, 0.42),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #fdd2b0 0%,
+      #fee0cc 38%,
+      #fdd0ae 68%,
+      #fcc18f 100%
+    );
+
+  font-family:
+    "DM Sans",
+    "Inter",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   GLOBAL BOX SIZING
+========================================================= */
+
+.shm-page *,
+.shm-page *::before,
+.shm-page *::after {
+  box-sizing: border-box;
+}
+
+.shm-page img {
+  max-width: 100%;
+}
+
+.shm-page h1,
+.shm-page h2,
+.shm-page h3,
+.shm-page h4,
+.shm-page h5 {
+  color: #000000;
+
+  font-family:
+    "DM Sans",
+    "Inter",
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  overflow-wrap: break-word;
+}
+
+.shm-page p {
+  color: #000000;
+  overflow-wrap: break-word;
+}
+
+.shm-page a,
+.shm-page button {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   SHELL
+========================================================= */
+
+.shm-shell {
+  width: min(1180px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   SUB NAV
+========================================================= */
+
+.shm-subnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  border-bottom:
+    1px solid rgba(246, 102, 66, 0.18);
+
+  background:
+    rgba(253, 210, 176, 0.92);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.shm-subnav-inner {
+  width: min(1180px, calc(100% - 64px));
+
+  min-height: 54px;
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+
+  min-width: 0;
+}
+
+.shm-subnav-brand {
+  position: relative;
+  flex: 0 0 auto;
+
+  color: #000000;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+}
+
+.shm-subnav-brand::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  right: -11px;
+
+  width: 4px;
+  height: 4px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background:
+    var(--shm-orange);
+
+  box-shadow:
+    0 0 12px rgba(246, 102, 66, 0.7);
+}
+
+.shm-subnav-scroll {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.shm-subnav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.shm-subnav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 24px;
+
+  width: max-content;
+  min-width: 100%;
+}
+
+.shm-subnav-links a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 54px;
+
+  color: #000000;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.07em;
+
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  opacity: 0.72;
+
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.shm-subnav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2px;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--shm-orange),
+      var(--shm-magenta)
+    );
+
+  transition:
+    transform 0.25s ease;
+}
+
+.shm-subnav-links a:hover {
+  color: #000000;
+  opacity: 1;
+}
+
+.shm-subnav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.shm-subnav-cta {
+  flex: 0 0 auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 34px;
+
+  padding: 0 15px;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--shm-orange),
+      var(--shm-magenta)
+    );
+
+  box-shadow:
+    0 8px 22px rgba(217, 41, 75, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.shm-subnav-cta:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 12px 26px rgba(217, 41, 75, 0.28);
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.shm-glow {
+  position: absolute;
+
+  width: 680px;
+  height: 680px;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  z-index: 0;
+
+  filter: blur(18px);
+}
+
+.shm-glow-top {
+  top: -390px;
+  right: -230px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(217, 41, 75, 0.13) 0%,
+      rgba(246, 102, 66, 0.09) 42%,
+      transparent 70%
+    );
+}
+
+.shm-glow-bottom {
+  bottom: -390px;
+  left: -280px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(246, 102, 66, 0.12) 0%,
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   GRADIENT TEXT
+========================================================= */
+
+.shm-gradient-text {
+  background:
+    linear-gradient(
+      135deg,
+      var(--shm-orange-bright),
+      var(--shm-magenta)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.shm-hero {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.03fr)
+    minmax(0, 0.97fr);
+
+  align-items: center;
+
+  gap: clamp(30px, 5vw, 58px);
+
+  padding-top: 34px;
+
+  padding-bottom:
+    clamp(45px, 5vw, 68px);
+}
+
+.shm-hero-copy {
+  min-width: 0;
+  max-width: 610px;
+}
+
+.shm-kicker {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 13px;
+
+  padding: 7px 11px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.28);
+
+  background:
+    rgba(255, 255, 255, 0.46);
+
+  color:
+    var(--shm-orange);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+.shm-kicker-magenta {
+  margin-bottom: 9px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color:
+    var(--shm-magenta);
+}
+
+.shm-hero-title {
+  margin: 0 0 15px;
+
+  max-width: 680px;
+
+  color: #000000;
+
+  font-size:
+    clamp(36px, 4vw, 52px);
+
+  line-height: 1.01;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 700;
+}
+
+.shm-hero-description {
+  max-width: 570px;
+
+  margin: 0 0 21px;
+
+  color: #000000;
+
+  font-size: 14px;
+
+  line-height: 1.58;
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.shm-hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.shm-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 42px;
+
+  padding: 0 19px;
+
+  border-radius: 999px;
+
+  border: 0;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.shm-button:hover {
+  transform: translateY(-2px);
+}
+
+.shm-button-primary {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--shm-orange-bright),
+      var(--shm-orange)
+    );
+
+  box-shadow:
+    0 10px 25px rgba(246, 102, 66, 0.24);
+}
+
+.shm-button-secondary {
+  color: #000000;
+
+  background:
+    rgba(255, 255, 255, 0.68);
+
+  border:
+    1px solid rgba(14, 11, 63, 0.16);
+
+  box-shadow:
+    0 5px 15px rgba(14, 11, 63, 0.05);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.shm-hero-visual {
+  position: relative;
+
+  min-width: 0;
+
+  width: min(100%, 450px);
+
+  margin-inline: auto;
+}
+
+.shm-image-glow {
+  position: absolute;
+
+  inset: -22px;
+
+  border-radius: 42px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(246, 102, 66, 0.22),
+      transparent 65%
+    );
+
+  filter: blur(25px);
+
+  opacity: 0.7;
+
+  pointer-events: none;
+}
+
+.shm-image-frame {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+
+  aspect-ratio: 1.14 / 1;
+
+  border-radius: 25px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.25);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(246, 102, 66, 0.14),
+      transparent 55%
+    ),
+    #fff1e8;
+
+  box-shadow:
+    0 20px 50px rgba(14, 11, 63, 0.10);
+}
+
+.shm-image-frame img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease;
+}
+
+.shm-image-frame:hover img {
+  transform: scale(1.025);
+}
+
+.shm-image-overlay {
+  position: absolute;
+
+  left: 15px;
+  bottom: 15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  max-width:
+    calc(100% - 30px);
+
+  padding: 8px 11px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.55);
+
+  background:
+    rgba(14, 11, 63, 0.92);
+
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+  white-space: nowrap;
+}
+
+.shm-status-dot {
+  flex: 0 0 auto;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    var(--shm-orange);
+
+  box-shadow:
+    0 0 0 4px rgba(246, 102, 66, 0.12),
+    0 0 13px rgba(246, 102, 66, 0.65);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.shm-section {
+  position: relative;
+  z-index: 1;
+
+  margin-top: -32px;
+
+  margin-bottom:
+    clamp(52px, 6vw, 76px);
+}
+
+.shm-section-heading {
+  margin-bottom: 28px;
+
+  text-align: center;
+}
+
+.shm-section-heading h2 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size:
+    clamp(27px, 3vw, 38px);
+
+  line-height: 1.08;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 600;
+}
+
+.shm-heading-line {
+  width: 55px;
+  height: 3px;
+
+  margin: 13px auto 0;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--shm-orange),
+      var(--shm-magenta)
+    );
+}
+
+.shm-muted {
+  color: #000000;
+}
+
+
+/* =========================================================
+   IMPACT
+========================================================= */
+
+.shm-impact-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 13px;
+}
+
+.shm-impact-card {
+  min-width: 0;
+
+  padding: 23px;
+
+  border-radius: 21px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.18);
+
+  background:
+    rgba(255, 255, 255, 0.72);
+
+  box-shadow:
+    0 11px 28px rgba(14, 11, 63, 0.06);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.shm-impact-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(246, 102, 66, 0.38);
+
+  box-shadow:
+    0 18px 40px rgba(14, 11, 63, 0.10);
+}
+
+.shm-impact-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  margin-bottom: 16px;
+
+  border-radius: 13px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.20);
+
+  background:
+    #fff1e8;
+
+  color:
+    var(--shm-orange);
+
+  font-size: 19px;
+}
+
+.shm-impact-card:nth-child(2)
+.shm-impact-icon {
+  color:
+    var(--shm-magenta);
+}
+
+.shm-impact-card:nth-child(3)
+.shm-impact-icon {
+  color:
+    var(--shm-navy);
+}
+
+.shm-impact-card h3 {
+  margin: 0 0 8px;
+
+  color: #000000;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+
+  font-weight: 650;
+}
+
+.shm-impact-card p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   ARCHITECTURE
+========================================================= */
+
+.shm-architecture-section {
+  padding:
+    clamp(24px, 3.2vw, 38px);
+
+  border-radius: 29px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.18);
+
+  background:
+    rgba(255, 255, 255, 0.48);
+
+  box-shadow:
+    0 16px 45px rgba(14, 11, 63, 0.05);
+}
+
+.shm-architecture-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   ARCHITECTURE CARD
+========================================================= */
+
+.shm-architecture-card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 0;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 17px;
+
+  border-radius: 19px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.16);
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  box-shadow:
+    0 9px 26px rgba(14, 11, 63, 0.05);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.shm-architecture-card:hover {
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(246, 102, 66, 0.38);
+
+  box-shadow:
+    0 16px 36px rgba(14, 11, 63, 0.09);
+}
+
+
+/* =========================================================
+   TECHNICAL VISUALS
+========================================================= */
+
+.shm-tech-visual {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 145px;
+
+  height: auto;
+
+  flex: 0 0 auto;
+
+  overflow: hidden;
+
+  margin-bottom: 16px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.16);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(246, 102, 66, 0.16),
+      transparent 65%
+    ),
+    #fff1e8;
+}
+
+
+/* =========================================================
+   SENSOR VISUAL
+========================================================= */
+
+.shm-steel-frame {
+  position: absolute;
+
+  inset: 26px 32px;
+
+  border:
+    2px solid rgba(14, 11, 63, 0.22);
+
+  transform:
+    skewY(-8deg);
+}
+
+.shm-steel-frame span {
+  position: absolute;
+
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  left: 0;
+
+  background:
+    rgba(14, 11, 63, 0.12);
+}
+
+.shm-steel-frame span:nth-child(1) {
+  top: 25%;
+}
+
+.shm-steel-frame span:nth-child(2) {
+  top: 50%;
+}
+
+.shm-steel-frame span:nth-child(3) {
+  top: 75%;
+}
+
+.shm-steel-frame span:nth-child(4) {
+  top: 0;
+
+  width: 2px;
+  height: 100%;
+
+  left: 50%;
+}
+
+.shm-sensor-node {
+  position: absolute;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    var(--shm-orange);
+
+  box-shadow:
+    0 0 0 4px rgba(246, 102, 66, 0.10),
+    0 0 15px rgba(246, 102, 66, 0.55);
+}
+
+.node-one {
+  top: 34px;
+  left: 48px;
+}
+
+.node-two {
+  top: 68px;
+  right: 52px;
+}
+
+.node-three {
+  bottom: 32px;
+  left: 76px;
+}
+
+.node-four {
+  bottom: 42px;
+  right: 84px;
+}
+
+.shm-sensor-line {
+  position: absolute;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--shm-orange),
+      transparent
+    );
+
+  transform-origin:
+    left;
+}
+
+.line-one {
+  width: 76px;
+
+  top: 41px;
+  left: 54px;
+
+  transform:
+    rotate(20deg);
+}
+
+.line-two {
+  width: 76px;
+
+  top: 73px;
+  right: 54px;
+
+  transform:
+    rotate(160deg);
+}
+
+.line-three {
+  width: 85px;
+
+  bottom: 37px;
+  left: 84px;
+
+  transform:
+    rotate(-25deg);
+}
+
+
+/* =========================================================
+   PIPELINE VISUAL
+========================================================= */
+
+.shm-pipeline-source {
+  position: absolute;
+
+  left: 17px;
+  top: 43px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.shm-pipeline-source span {
+  width: 21px;
+  height: 4px;
+
+  border-radius: 12px;
+
+  background:
+    var(--shm-orange);
+
+  box-shadow:
+    0 0 10px rgba(246, 102, 66, 0.4);
+}
+
+.shm-pipeline-lines {
+  position: absolute;
+
+  left: 46px;
+  top: 52px;
+
+  width: 57px;
+}
+
+.shm-pipeline-lines i {
+  display: block;
+
+  height: 1px;
+
+  margin-bottom: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--shm-orange),
+      rgba(217, 41, 75, 0.25)
+    );
+
+  animation:
+    shmDataFlow 2s linear infinite;
+}
+
+.shm-pipeline-gateway {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 52px;
+  height: 52px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 14px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.45);
+
+  background:
+    rgba(246, 102, 66, 0.10);
+}
+
+.shm-gateway-core {
+  position: absolute;
+
+  inset: 15px;
+
+  border-radius: 50%;
+
+  background:
+    var(--shm-orange);
+
+  box-shadow:
+    0 0 18px rgba(246, 102, 66, 0.55);
+}
+
+.shm-gateway-ring {
+  position: absolute;
+
+  inset: 9px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.35);
+
+  border-radius: 50%;
+}
+
+.shm-pipeline-cloud {
+  position: absolute;
+
+  right: 18px;
+  top: 41px;
+
+  width: 61px;
+  height: 40px;
+
+  border:
+    1px solid rgba(217, 41, 75, 0.35);
+
+  border-radius: 25px;
+
+  background:
+    rgba(217, 41, 75, 0.08);
+}
+
+.shm-pipeline-cloud span {
+  position: absolute;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    var(--shm-magenta);
+}
+
+.shm-pipeline-cloud span:nth-child(1) {
+  left: 16px;
+  top: 17px;
+}
+
+.shm-pipeline-cloud span:nth-child(2) {
+  left: 28px;
+  top: 12px;
+}
+
+.shm-pipeline-cloud span:nth-child(3) {
+  left: 41px;
+  top: 19px;
+}
+
+@keyframes shmDataFlow {
+  from {
+    opacity: 0.25;
+
+    transform:
+      scaleX(0.5);
+
+    transform-origin:
+      left;
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scaleX(1);
+
+    transform-origin:
+      left;
+  }
+}
+
+
+/* =========================================================
+   ANALYTICS VISUAL
+========================================================= */
+
+.shm-analytics-grid {
+  position: absolute;
+
+  inset: 15px;
+
+  opacity: 0.38;
+
+  background-image:
+    linear-gradient(
+      rgba(14, 11, 63, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(14, 11, 63, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    25px 25px;
+}
+
+.shm-baseline-line {
+  position: absolute;
+
+  left: 15px;
+  right: 15px;
+
+  top: 78px;
+
+  height: 1px;
+
+  border-top:
+    1px dashed rgba(14, 11, 63, 0.25);
+}
+
+.shm-analytics-chart {
+  position: absolute;
+
+  inset:
+    20px 15px 27px;
+
+  width:
+    calc(100% - 30px);
+
+  height:
+    calc(100% - 47px);
+
+  overflow: visible;
+}
+
+.shm-analytics-chart path {
+  stroke:
+    var(--shm-orange);
+
+  stroke-width: 3;
+
+  filter:
+    drop-shadow(
+      0 0 7px
+      rgba(246, 102, 66, 0.45)
+    );
+}
+
+.shm-anomaly-point {
+  position: absolute;
+
+  top: 43px;
+  right: 30%;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background:
+    var(--shm-magenta);
+
+  box-shadow:
+    0 0 0 5px rgba(217, 41, 75, 0.10),
+    0 0 16px rgba(217, 41, 75, 0.55);
+}
+
+
+/* =========================================================
+   DASHBOARD VISUAL
+========================================================= */
+
+.shm-dashboard-top {
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding-inline: 12px;
+
+  border-bottom:
+    1px solid rgba(14, 11, 63, 0.08);
+}
+
+.shm-dashboard-top span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(14, 11, 63, 0.25);
+}
+
+.shm-dashboard-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 7px;
+
+  padding: 12px;
+}
+
+.shm-health-score {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-height: 82px;
+
+  padding: 11px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.12);
+
+  border-radius: 11px;
+
+  background:
+    rgba(255, 255, 255, 0.48);
+}
+
+.shm-health-score small {
+  color: #000000;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+}
+
+.shm-health-score strong {
+  margin-top: 4px;
+
+  font-size: 27px;
+
+  line-height: 1;
+
+  color:
+    var(--shm-orange);
+}
+
+.shm-health-score em {
+  margin-top: 4px;
+
+  color: #000000;
+
+  font-size: 9px;
+
+  font-style: normal;
+
+  letter-spacing: 0.07em;
+}
+
+.shm-dashboard-bars {
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 4px;
+
+  min-height: 82px;
+
+  padding: 11px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.12);
+
+  border-radius: 11px;
+
+  background:
+    rgba(255, 255, 255, 0.48);
+}
+
+.shm-dashboard-bars i {
+  flex: 1;
+
+  border-radius:
+    4px 4px 0 0;
+
+  background:
+    linear-gradient(
+      to top,
+      var(--shm-orange),
+      var(--shm-magenta)
+    );
+}
+
+.shm-dashboard-bars i:nth-child(1) {
+  height: 35%;
+}
+
+.shm-dashboard-bars i:nth-child(2) {
+  height: 55%;
+}
+
+.shm-dashboard-bars i:nth-child(3) {
+  height: 43%;
+}
+
+.shm-dashboard-bars i:nth-child(4) {
+  height: 75%;
+}
+
+.shm-dashboard-bars i:nth-child(5) {
+  height: 92%;
+}
+
+.shm-dashboard-alert {
+  grid-column: 1 / -1;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 28px;
+
+  padding-inline: 9px;
+
+  border-radius: 9px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.15);
+
+  color: #000000;
+
+  font-size: 9px;
+
+  letter-spacing: 0.04em;
+}
+
+.shm-dashboard-alert span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    var(--shm-orange);
+}
+
+
+/* =========================================================
+   TECHNICAL CAPTION
+========================================================= */
+
+.shm-tech-caption {
+  position: absolute;
+
+  left: 11px;
+  bottom: 3px;
+
+  color: #000000;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.09em;
+}
+
+
+/* =========================================================
+   ARCHITECTURE COPY
+========================================================= */
+
+.shm-architecture-copy {
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
+.shm-architecture-label {
+  margin-bottom: 8px;
+
+  color:
+    var(--shm-orange);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.shm-architecture-card h3 {
+  margin: 0 0 7px;
+
+  color: #000000;
+
+  font-size: 17px;
+
+  line-height: 1.23;
+
+  font-weight: 650;
+}
+
+.shm-architecture-card >
+.shm-architecture-copy >
+p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 10.5px;
+
+  line-height: 1.58;
+}
+
+
+/* =========================================================
+   BENEFIT
+========================================================= */
+
+.shm-benefit {
+  margin-top: 18px;
+
+  padding-top: 13px;
+
+  border-top:
+    1px solid rgba(14, 11, 63, 0.10);
+}
+
+.shm-benefit span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #000000;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.11em;
+
+  text-transform: uppercase;
+}
+
+.shm-benefit strong {
+  display: block;
+
+  color: #000000;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   APPLICATIONS
+========================================================= */
+
+.shm-section-intro {
+  margin-bottom: 28px;
+}
+
+.shm-section-intro h2 {
+  margin: 0;
+
+  color: #000000;
+
+  font-size:
+    clamp(29px, 3.3vw, 41px);
+
+  line-height: 1.06;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 600;
+}
+
+.shm-applications-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 11px;
+}
+
+.shm-application-card {
+  position: relative;
+
+  min-width: 0;
+
+  height: 300px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.18);
+
+  background:
+    #fff1e8;
+
+  box-shadow:
+    0 10px 29px rgba(14, 11, 63, 0.06);
+}
+
+.shm-application-card img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.shm-application-card:hover img {
+  transform: scale(1.05);
+}
+
+.shm-application-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  padding: 19px;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.78),
+      rgba(0, 0, 0, 0.34) 42%,
+      rgba(0, 0, 0, 0.02) 78%,
+      transparent
+    );
+}
+
+.shm-application-overlay h3 {
+  margin: 0 0 6px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  line-height: 1.25;
+
+  font-weight: 650;
+}
+
+.shm-application-overlay p {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   ROI
+========================================================= */
+
+.shm-roi-section {
+
+  margin-top: 40px;
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(32px, 5vw, 58px);
+}
+
+.shm-roi-image {
+  position: relative;
+
+  min-width: 0;
+
+  width: min(100%, 500px);
+
+  margin-inline: auto;
+
+  overflow: hidden;
+
+  aspect-ratio: 1 / 0.9;
+
+  border-radius: 25px;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.20);
+
+  background:
+    #fff1e8;
+
+  box-shadow:
+    0 20px 50px rgba(14, 11, 63, 0.09);
+}
+
+.shm-roi-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.shm-roi-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.18),
+      transparent 70%
+    );
+}
+
+.shm-roi-copy {
+  min-width: 0;
+}
+
+.shm-roi-heading h2 {
+  margin: 0 0 29px;
+
+  color: #000000;
+
+  font-size:
+    clamp(29px, 3.3vw, 41px);
+
+  line-height: 1.06;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 600;
+}
+
+.shm-roi-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 19px;
+}
+
+.shm-roi-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+}
+
+.shm-roi-icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 39px;
+
+  width: 39px;
+  height: 39px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(246, 102, 66, 0.18);
+
+  background:
+    rgba(255, 255, 255, 0.58);
+
+  color:
+    var(--shm-orange);
+
+  font-size: 15px;
+}
+
+.shm-roi-item:nth-child(2)
+.shm-roi-icon {
+  color:
+    var(--shm-magenta);
+}
+
+.shm-roi-item:nth-child(3)
+.shm-roi-icon {
+  color:
+    var(--shm-navy);
+}
+
+.shm-roi-content {
+  min-width: 0;
+}
+
+.shm-roi-content h3 {
+  margin: 0 0 5px;
+
+  color: #000000;
+
+  font-size: 16px;
+
+  line-height: 1.28;
+
+  font-weight: 650;
+}
+
+.shm-roi-content p {
+  max-width: 550px;
+
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 14px;
+
+  line-height: 1.58;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.shm-how-heading {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.85fr);
+
+  align-items: end;
+
+  gap:
+    clamp(25px, 4vw, 55px);
+
+  margin-bottom: 40px;
+}
+
+.shm-how-heading h2 {
+  max-width: 700px;
+
+  margin: 6px 0 0;
+
+  color: #000000;
+
+  font-size:
+    clamp(30px, 3.5vw, 44px);
+
+  line-height: 1.04;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+}
+
+.shm-how-heading > p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+.shm-how-label {
+  color: var(--shm-orange);
+}
+
+.shm-how-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap:
+    clamp(42px, 5vw, 62px);
+}
+
+.shm-how-card {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap:
+    clamp(28px, 5vw, 58px);
+}
+
+.shm-how-card-reverse {
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 0.95fr);
+}
+
+.shm-how-card-reverse
+.shm-how-visual-wrap {
+  order: 2;
+}
+
+.shm-how-card-reverse
+.shm-how-content {
+  order: 1;
+}
+
+.shm-how-visual-wrap {
+  min-width: 0;
+}
+
+.shm-how-visual-wrap
+.shm-tech-visual {
+  height:
+    clamp(250px, 28vw, 330px);
+
+  min-height: 0;
+
+  flex-basis: auto;
+
+  margin: 0;
+
+  border-radius: 24px;
+}
+
+
+/* =========================================================
+   HOW IT WORKS CONTENT
+========================================================= */
+
+.shm-how-content {
+  min-width: 0;
+
+  max-width: 600px;
+}
+
+.shm-how-content h3 {
+  margin: 0 0 6px;
+
+  color: #000000;
+
+  font-size:
+    clamp(23px, 2.4vw, 31px);
+
+  line-height: 1.10;
+
+  letter-spacing: -0.04em;
+
+  font-weight: 700;
+}
+
+.shm-how-content h4 {
+  margin: 0 0 13px;
+
+  color:
+    var(--shm-orange);
+
+  font-size: 14px;
+
+  line-height: 1.45;
+
+  font-weight: 700;
+}
+
+.shm-how-description {
+  margin: 0 0 19px;
+
+  color: #000000;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+.shm-how-points {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  padding-top: 15px;
+
+  border-top:
+    1px solid rgba(14, 11, 63, 0.12);
+}
+
+.shm-how-point {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+.shm-how-point-marker {
+  flex: 0 0 8px;
+
+  width: 8px;
+  height: 8px;
+
+  margin-top: 6px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--shm-orange),
+      var(--shm-magenta)
+    );
+
+  box-shadow:
+    0 0 12px rgba(246, 102, 66, 0.30);
+}
+
+.shm-how-point h5 {
+  margin: 0 0 2px;
+
+  color: #000000;
+
+  font-size: 14px;
+
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+.shm-how-point p {
+  margin: 0;
+
+  color: #000000;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.shm-cta {
+  position: relative;
+
+  z-index: 1;
+
+  padding-bottom: 58px;
+}
+
+.shm-cta-inner {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    clamp(40px, 5vw, 55px) 25px;
+
+  border-radius: 26px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0,
+      rgba(255, 139, 86, 0.32),
+      transparent 50%
+    ),
+    linear-gradient(
+      135deg,
+      #ffd5bf,
+      #ffe5d8
+    );
+
+  border:
+    1px solid rgba(246, 102, 66, 0.22);
+
+  box-shadow:
+    0 20px 50px rgba(14, 11, 63, 0.07);
+}
+
+.shm-cta-pattern {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.08;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle at 2px 2px,
+      #0e0b3f 1px,
+      transparent 0
+    );
+
+  background-size: 34px 34px;
+}
+
+.shm-cta-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.shm-cta-content h2 {
+  margin: 0 0 13px;
+
+  color: #000000;
+
+  font-size:
+    clamp(28px, 3.6vw, 44px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 700;
+}
+
+.shm-cta-content p {
+  max-width: 620px;
+
+  margin: 0 auto 22px;
+
+  color: #000000;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+.shm-cta-actions {
+  display: flex;
+
+  justify-content: center;
+}
+
+.shm-cta-light {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 42px;
+
+  padding: 0 22px;
+
+  border-radius: 999px;
+
+  color: #ffffff;
+
+  background:
+    var(--shm-navy);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.shm-cta-light:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(14, 11, 63, 0.20);
+}
+
+
+/* =========================================================
+   1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .shm-shell {
+    width:
+      min(1080px, calc(100% - 56px));
+  }
+
+  .shm-subnav-inner {
+    width:
+      min(1080px, calc(100% - 56px));
+  }
+
+  .shm-architecture-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    align-items: stretch;
+  }
+
+  .shm-applications-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   1000px — TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .shm-shell {
+    width:
+      min(820px, calc(100% - 40px));
+  }
+
+  .shm-subnav-inner {
+    width:
+      calc(100% - 32px);
+  }
+
+  .shm-subnav-links {
+    justify-content: flex-start;
+
+    min-width: max-content;
+  }
+
+  .shm-subnav-cta {
+    display: none;
+  }
+
+  .shm-hero {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    max-width: 820px;
+
+    margin-inline: auto;
+
+    padding-top: 48px;
+
+    padding-bottom: 58px;
+  }
+
+  .shm-hero-copy {
+    max-width: none;
+
+    text-align: center;
+  }
+
+  .shm-hero-title {
+    max-width: 720px;
+
+    margin-inline: auto;
+  }
+
+  .shm-hero-description {
+    margin-inline: auto;
+  }
+
+  .shm-hero-actions {
+    justify-content: center;
+  }
+
+  .shm-hero-visual {
+    width:
+      min(100%, 600px);
+
+    margin-inline: auto;
+  }
+
+  .shm-roi-section {
+    grid-template-columns: 1fr;
+
+    max-width: 820px;
+
+    margin-inline: auto;
+  }
+
+  .shm-roi-image {
+    width:
+      min(100%, 600px);
+
+    margin-inline: auto;
+  }
+
+  .shm-how-heading {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-bottom: 38px;
+  }
+
+  .shm-how-content {
+    max-width: none;
+  }
+
+}
+
+
+/* =========================================================
+   800px — TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .shm-shell {
+    width:
+      calc(100% - 36px);
+  }
+
+  .shm-section {
+    margin-top: -20px;
+
+    margin-bottom: 62px;
+  }
+
+  .shm-impact-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .shm-impact-card:last-child {
+    grid-column:
+      1 / -1;
+  }
+
+  .shm-architecture-grid {
+    grid-template-columns:
+      1fr 1fr;
+
+    align-items: stretch;
+  }
+
+  .shm-architecture-card {
+    min-height: 0;
+
+    height: auto;
+
+    padding: 18px;
+  }
+
+  .shm-applications-grid {
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .shm-application-card {
+    height: 290px;
+  }
+
+  .shm-tech-visual {
+    min-height: 175px;
+
+    height: auto;
+
+    flex-basis: auto;
+  }
+
+  .shm-benefit {
+    margin-top: 20px;
+  }
+
+  .shm-how-card,
+  .shm-how-card-reverse {
+    grid-template-columns: 1fr;
+
+    gap: 23px;
+  }
+
+  .shm-how-card-reverse
+  .shm-how-visual-wrap {
+    order: initial;
+  }
+
+  .shm-how-card-reverse
+  .shm-how-content {
+    order: initial;
+  }
+
+  .shm-how-visual-wrap
+  .shm-tech-visual {
+    height: 300px;
+  }
+
+}
+
+
+/* =========================================================
+   600px — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  html {
+    scroll-padding-top: 68px;
+  }
+
+  .shm-page {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .shm-shell {
+    width:
+      calc(100% - 28px);
+  }
+
+
+  /* -----------------------------------------
+     MOBILE SUB NAV
+  ----------------------------------------- */
+
+  .shm-subnav-inner {
+    width:
+      calc(100% - 18px);
+
+    min-height: 50px;
+
+    gap: 8px;
+  }
+
+  .shm-subnav-brand {
+    display: none;
+  }
+
+  .shm-subnav-links {
+    gap: 18px;
+
+    justify-content: flex-start;
+  }
+
+  .shm-subnav-links a {
+    min-height: 50px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.05em;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE HERO
+  ----------------------------------------- */
+
+  .shm-hero {
+    padding-top: 40px;
+
+    padding-bottom: 45px;
+
+    gap: 25px;
+  }
+
+  .shm-kicker {
+    margin-bottom: 11px;
+
+    padding: 7px 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.10em;
+  }
+
+  .shm-hero-title {
+    font-size:
+      clamp(31px, 8.5vw, 42px);
+
+    line-height: 1.03;
+
+    margin-bottom: 14px;
+  }
+
+  .shm-hero-description {
+    font-size: 12px;
+
+    line-height: 1.58;
+
+    margin-bottom: 20px;
+  }
+
+  .shm-hero-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .shm-button {
+    width: 100%;
+
+    min-height: 43px;
+
+    font-size: 14px;
+  }
+
+  .shm-image-frame {
+    aspect-ratio: 1 / 0.94;
+
+    border-radius: 22px;
+  }
+
+  .shm-image-overlay {
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+
+    max-width: none;
+
+    justify-content: center;
+
+    padding: 7px 9px;
+
+    font-size: 8px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE SECTION HEADINGS
+  ----------------------------------------- */
+
+  .shm-section {
+    margin-top: -10px;
+
+    margin-bottom: 55px;
+  }
+
+  .shm-section-heading {
+    margin-bottom: 26px;
+  }
+
+  .shm-section-heading h2 {
+    font-size: 26px;
+  }
+
+  .shm-heading-line {
+    width: 50px;
+
+    margin-top: 11px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE IMPACT
+  ----------------------------------------- */
+
+  .shm-impact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .shm-impact-card {
+    padding: 20px;
+
+    border-radius: 20px;
+  }
+
+  .shm-impact-card h3 {
+    font-size: 16px;
+  }
+
+  .shm-impact-card p {
+    font-size: 10.5px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE ARCHITECTURE
+  ----------------------------------------- */
+
+  .shm-architecture-section {
+    padding: 20px 12px;
+
+    border-radius: 23px;
+  }
+
+  .shm-architecture-grid {
+    grid-template-columns: 1fr;
+
+    gap: 9px;
+  }
+
+  .shm-architecture-card {
+    min-height: 0;
+
+    height: auto;
+
+    padding: 16px;
+
+    border-radius: 19px;
+  }
+
+  .shm-tech-visual {
+    min-height: 170px;
+
+    height: auto;
+
+    flex-basis: auto;
+
+    border-radius: 16px;
+  }
+
+  .shm-architecture-card h3 {
+    font-size: 16px;
+  }
+
+  .shm-architecture-card >
+  .shm-architecture-copy >
+  p {
+    font-size: 10px;
+  }
+
+  .shm-benefit {
+    margin-top: 19px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE APPLICATIONS
+  ----------------------------------------- */
+
+  .shm-section-intro {
+    margin-bottom: 25px;
+  }
+
+  .shm-section-intro h2 {
+    font-size: 27px;
+  }
+
+  .shm-applications-grid {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+  }
+
+  .shm-application-card {
+    height: 285px;
+
+    border-radius: 20px;
+  }
+
+  .shm-application-overlay {
+    padding: 18px;
+  }
+
+  .shm-application-overlay h3 {
+    font-size: 16px;
+  }
+
+  .shm-application-overlay p {
+    font-size: 10px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE ROI
+  ----------------------------------------- */
+
+  .shm-roi-section {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .shm-roi-image {
+    aspect-ratio: 1 / 0.94;
+
+    border-radius: 22px;
+  }
+
+  .shm-roi-heading h2 {
+    margin-bottom: 25px;
+
+    font-size: 27px;
+  }
+
+  .shm-roi-list {
+    gap: 18px;
+  }
+
+  .shm-roi-item {
+    gap: 10px;
+  }
+
+  .shm-roi-icon {
+    flex-basis: 37px;
+
+    width: 37px;
+    height: 37px;
+  }
+
+  .shm-roi-content h3 {
+    font-size: 14px;
+  }
+
+  .shm-roi-content p {
+    font-size: 10px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE HOW IT WORKS
+  ----------------------------------------- */
+
+  .shm-how-heading {
+    margin-bottom: 31px;
+  }
+
+  .shm-how-heading h2 {
+    font-size: 27px;
+  }
+
+  .shm-how-heading > p {
+    font-size: 10px;
+  }
+
+  .shm-how-list {
+    gap: 43px;
+  }
+
+  .shm-how-card,
+  .shm-how-card-reverse {
+    grid-template-columns: 1fr;
+
+    gap: 21px;
+  }
+
+  .shm-how-card-reverse
+  .shm-how-visual-wrap,
+  .shm-how-card-reverse
+  .shm-how-content {
+    order: initial;
+  }
+
+  .shm-how-visual-wrap
+  .shm-tech-visual {
+    height: 270px;
+
+    border-radius: 21px;
+  }
+
+  .shm-how-content h3 {
+    font-size: 22px;
+  }
+
+  .shm-how-content h4 {
+    font-size: 10px;
+  }
+
+  .shm-how-description {
+    font-size: 14px;
+
+    margin-bottom: 17px;
+  }
+
+  .shm-how-points {
+    gap: 12px;
+  }
+
+  .shm-how-point h5 {
+    font-size: 10px;
+  }
+
+  .shm-how-point p {
+    font-size: 9.5px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE CTA
+  ----------------------------------------- */
+
+  .shm-cta {
+    padding-bottom: 43px;
+  }
+
+  .shm-cta-inner {
+    padding: 37px 14px;
+
+    border-radius: 22px;
+  }
+
+  .shm-cta-content h2 {
+    font-size: 26px;
+  }
+
+  .shm-cta-content p {
+    font-size: 10px;
+
+    margin-bottom: 20px;
+  }
+
+  .shm-cta-light {
+    width: 100%;
+
+    min-height: 43px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   420px — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .shm-shell {
+    width:
+      calc(100% - 22px);
+  }
+
+  .shm-subnav-links {
+    gap: 15px;
+  }
+
+  .shm-subnav-links a {
+    font-size: 8.5px;
+  }
+
+  .shm-hero-title {
+    font-size: 32px;
+  }
+
+  .shm-hero-description {
+    font-size: 14px;
+  }
+
+  .shm-image-frame {
+    aspect-ratio: 0.94 / 1;
+
+    border-radius: 21px;
+  }
+
+  .shm-architecture-card {
+    min-height: 0;
+
+    height: auto;
+
+    padding: 15px;
+
+    border-radius: 18px;
+  }
+
+  .shm-tech-visual {
+    min-height: 165px;
+
+    height: auto;
+
+    flex-basis: auto;
+
+    border-radius: 16px;
+  }
+
+  .shm-how-visual-wrap
+  .shm-tech-visual {
+    height: 245px;
+
+    border-radius: 20px;
+  }
+
+  .shm-how-content h3 {
+    font-size: 21px;
+  }
+
+  .shm-application-card {
+    height: 280px;
+
+    border-radius: 20px;
+  }
+
+  .shm-roi-image {
+    aspect-ratio: 0.94 / 1;
+
+    border-radius: 21px;
+  }
+
+  .shm-cta-inner {
+    padding: 35px 13px;
+  }
+
+}
+
+
+/* =========================================================
+   360px — VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .shm-shell {
+    width:
+      calc(100% - 18px);
+  }
+
+  .shm-hero-title {
+    font-size: 30px;
+  }
+
+  .shm-section-heading h2 {
+    font-size: 24px;
+  }
+
+  .shm-how-heading h2 {
+    font-size: 25px;
+  }
+
+  .shm-application-card {
+    height: 270px;
+  }
+
+  .shm-cta-content h2 {
+    font-size: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .shm-image-frame img,
+  .shm-impact-card,
+  .shm-architecture-card,
+  .shm-application-card img,
+  .shm-button,
+  .shm-subnav-cta,
+  .shm-cta-light {
+    transition: none;
+  }
+
+  .shm-pipeline-lines i {
+    animation: none;
+  }
+
+}
+
+
+/* =========================================================
+   SHM APPLICATION CARDS
+   FINAL TEXT VISIBILITY FIX
+========================================================= */
+
+/* Keep image, overlay and text in the correct stacking order */
+.shm-page .shm-application-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   APPLICATION IMAGE
+--------------------------------------------------------- */
+
+.shm-page .shm-application-card img {
+  position: relative;
+  z-index: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ---------------------------------------------------------
+   DARK IMAGE GRADIENT
+   Stronger at the bottom for text readability
+--------------------------------------------------------- */
+
+.shm-page .shm-application-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.02) 0%,
+      rgba(0, 0, 0, 0.10) 35%,
+      rgba(0, 0, 0, 0.42) 60%,
+      rgba(0, 0, 0, 0.82) 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   TEXT OVERLAY
+--------------------------------------------------------- */
+
+.shm-page .shm-application-overlay {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  top: auto;
+
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  width: 100%;
+
+  padding: 70px 20px 20px;
+
+  /*
+    Extra gradient directly behind the text.
+  */
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.12) 25%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
+
+  color: #ffffff !important;
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+--------------------------------------------------------- */
+
+.shm-page .shm-application-overlay h3 {
+  position: relative;
+  z-index: 6;
+
+  display: block;
+
+  margin: 0 0 7px;
+
+  color: #ffffff !important;
+
+  font-size: 18px;
+
+  line-height: 1.25;
+
+  font-weight: 750;
+
+  letter-spacing: -0.015em;
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.85),
+    0 1px 2px rgba(0, 0, 0, 1);
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+--------------------------------------------------------- */
+
+.shm-page .shm-application-overlay p {
+  position: relative;
+  z-index: 6;
+
+  display: block;
+
+  margin: 0;
+
+  max-width: 520px;
+
+  color: #ffffff !important;
+
+  font-size: 14px;
+
+  line-height: 1.55;
+
+  font-weight: 500;
+
+  text-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.85),
+    0 1px 2px rgba(0, 0, 0, 1);
+}
+
+
+/* ---------------------------------------------------------
+   ORANGE ACCENT
+--------------------------------------------------------- */
+
+.shm-page .shm-application-overlay::before {
+  content: "";
+
+  width: 38px;
+  height: 3px;
+
+  margin-bottom: 11px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--shm-orange),
+      var(--shm-magenta)
+    );
+
+  box-shadow:
+    0 2px 8px rgba(246, 102, 66, 0.45);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .shm-page .shm-application-overlay {
+    padding: 65px 18px 18px;
+  }
+
+  .shm-page .shm-application-overlay h3 {
+    font-size: 17px;
+  }
+
+  .shm-page .shm-application-overlay p {
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .shm-page .shm-application-card {
+    height: 285px;
+  }
+
+  .shm-page .shm-application-overlay {
+    padding: 65px 18px 18px;
+  }
+
+  .shm-page .shm-application-overlay h3 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .shm-page .shm-application-overlay p {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .shm-page .shm-application-overlay::before {
+    width: 32px;
+    height: 2px;
+    margin-bottom: 9px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .shm-page .shm-application-card {
+    height: 280px;
+  }
+
+  .shm-page .shm-application-overlay {
+    padding: 60px 16px 16px;
+  }
+
+  .shm-page .shm-application-overlay h3 {
+    font-size: 15px;
+  }
+
+  .shm-page .shm-application-overlay p {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .shm-page .shm-application-card {
+    height: 270px;
+  }
+
+  .shm-page .shm-application-overlay {
+    padding: 55px 15px 15px;
+  }
+
+  .shm-page .shm-application-overlay h3 {
+    font-size: 15px;
+  }
+
+  .shm-page .shm-application-overlay p {
+    font-size: 9.5px;
+  }
+}
+
+
+
+/* =========================================================
+   SHM IMPACT GRID — TOP & BOTTOM GAP
+========================================================= */
+
+.shm-impact-grid {
+  margin-top: 50px !important;
+  margin-bottom: 100px !important;
+}
+
+/* =========================================================
+   SHM HOW IT WORKS — CENTERED
+   ========================================================= */
+
+.shm-how-heading {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 0 !important;
+}
+
+/* Center Heading */
+
+.shm-how-heading h2 {
+  max-width: 700px !important;
+  margin: 0 0 40px !important;
+  text-align: center !important;
+  line-height: 1.1 !important;
+}
+
+/* Center description block + justify text */
+
+.shm-how-heading > p {
+  max-width: 720px !important;
+  margin: 3px !important;
+  text-align: justify !important;
+  font-weight: 600;
+  line-height: 1.65 !important;
+}
+
+/* =========================================================
+   HOW IT WORKS INTRO
+========================================================= */
+
+.shm-how-heading {
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+/* Increase the description text size */
+.shm-how-heading > p {
+  margin: 40px 0 0;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+.shm-section-intro-copy {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.shm-section-intro-copy h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* =========================================================
+   SHM — FIX EXTRA PAGE HEIGHT FROM BOTTOM GLOW
+   ========================================================= */
+
+.shm-page {
+  overflow-x: clip !important;
+  overflow-y: clip !important;
+}

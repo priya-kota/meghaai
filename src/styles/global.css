@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+/* =========================================================
+   MEGHAAI — GLOBAL STYLES
+========================================================= */
+
+:root {
+  --primary: rgb(246, 102, 66);
+  --primary-hex: #f66642;
+
+  --secondary: rgb(217, 41, 75);
+  --secondary-hex: #d9294b;
+
+  --brand-navy: #0e0b3f;
+
+  --background: #080914;
+  --surface: #111225;
+  --surface-light: #191a32;
+
+  --text-light: #ffffff;
+  --text-muted: #aeb0c5;
+
+  --border: rgba(246, 102, 66, 0.24);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+
+  min-width: 320px;
+
+  background: #080914;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+  min-width: 320px;
+
+  margin: 0;
+
+  padding: 0;
+
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(
+      rgba(8, 9, 20, 0.72),
+      rgba(8, 9, 20, 0.78)
+    ),
+    url("../assets/home/hero1.jpeg")
+      center / cover
+      no-repeat
+      fixed;
+
+  color: var(--text-light);
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  min-width: 320px;
+
+  min-height: 100vh;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+img {
+  max-width: 100%;
+
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p {
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+ul,
+ol {
+  list-style-position: inside;
+}
+
+
+/* =========================================================
+   INDUSTRIES PAGE OVERRIDE
+   ---------------------------------------------------------
+   Only activates when .industries-page exists.
+   This prevents the global dark background from appearing
+   behind the Industries page.
+========================================================= */
+
+html:has(.industries-page) {
+  background: #FDD2B0 !important;
+}
+
+
+body:has(.industries-page) {
+  background:
+    #FDD2B0 !important;
+
+  background-image:
+    none !important;
+
+  color:
+    #0E0B3F;
+}
+
+
+#root:has(.industries-page) {
+  background:
+    #FDD2B0 !important;
+}
+
+/* =========================================================
+   GLOBAL SCROLLBAR
+========================================================= */
+
+html {
+  scrollbar-color: #888888 transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #888888;
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}

@@ -1,0 +1,186 @@
+/* =========================================================
+   MEGHAAI — INDEX
+========================================================= */
+
+@import "./styles/global.css";
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  color:
+    var(--text-light);
+
+  background:
+    transparent;
+
+  font-synthesis:
+    none;
+
+  text-rendering:
+    optimizeLegibility;
+
+  font-size:
+    16px;
+}
+
+
+/* =========================================================
+   BOX SIZING
+========================================================= */
+
+* {
+  box-sizing:
+    border-box;
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+  min-width:
+    320px;
+
+  min-height:
+    100%;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  background:
+    transparent;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+  min-width:
+    320px;
+
+  min-height:
+    100vh;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  overflow-x:
+    hidden;
+
+  background:
+    transparent;
+
+  color:
+    var(--text-light);
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+#root {
+  min-width:
+    320px;
+
+  min-height:
+    100vh;
+
+  margin:
+    0;
+
+  padding:
+    0;
+
+  background:
+   transparent;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+button,
+input,
+textarea,
+select {
+  font:
+    inherit;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+  color:
+    inherit;
+}
+
+
+/* =========================================================
+   IMAGES
+========================================================= */
+
+img {
+  max-width:
+    100%;
+}
+
+
+/* =========================================================
+   INDUSTRIES PAGE
+   ---------------------------------------------------------
+   Override index.css when Industries page is mounted.
+========================================================= */
+
+html:has(.industries-page) {
+  background:
+    transparent;
+}
+
+
+body:has(.industries-page) {
+  background:
+    transparent;
+
+  background-image:
+    none !important;
+
+  color:
+    #0E0B3F;
+}
+
+
+#root:has(.industries-page) {
+  background:
+    transparent;
+}

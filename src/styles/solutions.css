@@ -1,0 +1,4018 @@
+/* =========================================================
+   MEGHAAI SOLUTIONS PAGE
+   HOME-PAGE MATCHED DESIGN SYSTEM
+   ---------------------------------------------------------
+   COLORS:
+   Navy        : #0E0B3F
+   Orange      : #F66642
+   Bright      : #FF7A59
+   Peach       : #FDD2B0
+   Light Peach : #FEE0CC
+   Soft Peach  : #FFF0E7
+   Red         : #E94A5F
+   Muted       : #646477
+
+   TYPOGRAPHY:
+   Body        : DM Sans
+   Headings    : Space Grotesk
+========================================================= */
+
+
+/* =========================================================
+   1. PAGE ROOT
+========================================================= */
+
+.solutions-page {
+
+  --navbar-height: 80px;
+
+  --solutions-bg: #FDD2B0;
+  --solutions-surface: #FFFFFF;
+  --solutions-surface-light: #FFE6D8;
+
+  --solutions-peach: #FFD0B2;
+  --solutions-peach-light: #FFF0E7;
+
+  --solutions-text: #0E0B3F;
+  --solutions-muted: #646477;
+
+  --solutions-orange: #F66642;
+  --solutions-orange-bright: #FF7A59;
+  --solutions-red: #E94A5F;
+  --solutions-navy: #0E0B3F;
+
+  --solutions-border: rgba(246, 102, 66, 0.24);
+
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+
+  padding:
+    145px
+    6%
+    100px;
+
+  overflow-x: clip;
+  overflow-y: hidden;
+
+  color:
+    var(--solutions-text);
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  background:
+
+    radial-gradient(
+      circle at 92% 8%,
+      rgba(255, 165, 105, 0.72),
+      transparent 34%
+    ),
+
+    radial-gradient(
+      circle at 5% 22%,
+      rgba(255, 218, 192, 0.82),
+      transparent 36%
+    ),
+
+    radial-gradient(
+      circle at 55% 48%,
+      rgba(255, 225, 205, 0.68),
+      transparent 45%
+    ),
+
+    radial-gradient(
+      circle at 78% 88%,
+      rgba(255, 183, 132, 0.42),
+      transparent 34%
+    ),
+
+    linear-gradient(
+      135deg,
+      #FDD2B0 0%,
+      #FEE0CC 38%,
+      #FDD0AE 68%,
+      #FCC18F 100%
+    );
+}
+
+
+/* =========================================================
+   2. GLOBAL RESET / SAFETY
+========================================================= */
+
+.solutions-page *,
+.solutions-page *::before,
+.solutions-page *::after {
+  box-sizing:
+    border-box;
+}
+
+.solutions-page img {
+  display:
+    block;
+
+  max-width:
+    100%;
+}
+
+.solutions-page h1,
+.solutions-page h2,
+.solutions-page h3,
+.solutions-page p {
+
+  max-width:
+    100%;
+
+  overflow-wrap:
+    anywhere;
+
+  word-wrap:
+    break-word;
+}
+
+.solutions-page h1,
+.solutions-page h2,
+.solutions-page h3 {
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+}
+
+.solutions-page a,
+.solutions-page button {
+
+  font-family:
+    inherit;
+}
+
+
+/* =========================================================
+   3. BACKGROUND GLOWS
+========================================================= */
+
+.solutions-glow {
+
+  position:
+    absolute;
+
+  width:
+    560px;
+
+  height:
+    560px;
+
+  border-radius:
+    50%;
+
+  pointer-events:
+    none;
+
+  filter:
+    blur(90px);
+
+  opacity:
+    0.42;
+
+  z-index:
+    0;
+}
+
+.solutions-glow-right {
+
+  top:
+    -220px;
+
+  right:
+    -220px;
+
+  background:
+    rgba(255, 122, 89, 0.22);
+}
+
+.solutions-glow-left {
+
+  top:
+    45%;
+
+  left:
+    -300px;
+
+  background:
+    rgba(246, 102, 66, 0.16);
+}
+
+
+/* =========================================================
+   4. HERO
+========================================================= */
+
+.solutions-hero {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  width:
+    min(850px, 100%);
+
+  margin:
+    0 auto 80px;
+
+  text-align:
+    center;
+}
+
+
+/* =========================================================
+   5. HERO EYEBROW
+========================================================= */
+
+.solutions-eyebrow {
+
+  margin:
+    0 0 18px;
+
+  color:
+    var(--solutions-orange);
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.22em;
+
+  line-height:
+    1.3;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   6. HERO TITLE
+========================================================= */
+
+.solutions-hero h1 {
+
+  margin:
+    0 0 24px;
+
+  color:
+    var(--solutions-navy);
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3.8rem
+    );
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    -0.065em;
+
+  line-height:
+    1.02;
+}
+
+
+/* =========================================================
+   7. HERO GRADIENT TEXT
+========================================================= */
+
+.solutions-gradient-text {
+
+  display:
+    inline-block;
+
+  padding:
+    0 0.04em;
+
+  color:
+    transparent;
+
+  background:
+    linear-gradient(
+      100deg,
+      #FF8A6B,
+      #F66642,
+      #E94A5F
+    );
+
+  background-clip:
+    text;
+
+  -webkit-background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+
+  line-height:
+    1.12;
+}
+
+
+/* =========================================================
+   8. HERO DESCRIPTION
+========================================================= */
+
+.solutions-hero p {
+
+  width:
+    100%;
+
+  max-width:
+    650px;
+
+  margin:
+    0 auto;
+
+  color:
+    #000000;
+
+  font-size:
+    16px;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   9. SOLUTION MODULES
+========================================================= */
+
+.solutions-modules {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    28px;
+
+  width:
+    min(1180px, 100%);
+
+  max-width:
+    100%;
+
+  margin:
+    0 auto;
+}
+
+
+/* =========================================================
+   10. SOLUTION MODULE
+   REDUCED CARD SIZE
+========================================================= */
+
+.solution-module {
+
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  /*
+    REDUCED FROM 44px
+  */
+  gap:
+    30px;
+
+  width:
+    100%;
+
+  min-width:
+    0;
+
+  /*
+    REDUCED FROM 300px
+  */
+  min-height:
+    240px;
+
+  /*
+    REDUCED FROM 30px 34px
+  */
+  padding:
+    24px 28px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.20);
+
+  border-radius:
+    22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #FFFFFF 0%,
+      #FFF0E7 100%
+    );
+
+  box-shadow:
+    0 18px 45px
+    rgba(14, 11, 63, 0.08),
+
+    0 0 25px
+    rgba(246, 102, 66, 0.05);
+
+  transition:
+    border-color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* =========================================================
+   11. MODULE HOVER
+========================================================= */
+
+.solution-module:hover {
+
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(246, 102, 66, 0.50);
+
+  box-shadow:
+    0 25px 60px
+    rgba(14, 11, 63, 0.12),
+
+    0 0 35px
+    rgba(246, 102, 66, 0.12);
+}
+
+
+/* =========================================================
+   12. REVERSE MODULE
+========================================================= */
+
+.solution-module-reverse {
+
+  flex-direction:
+    row-reverse;
+
+  background:
+    linear-gradient(
+      145deg,
+      #FFF9F6 0%,
+      #FFE6D8 100%
+    );
+}
+
+
+/* =========================================================
+   13. OPTIMIZATION MODULE
+========================================================= */
+
+.solution-module-optimization:hover {
+
+  border-color:
+    rgba(233, 74, 95, 0.50);
+}
+
+
+/* =========================================================
+   14. MODULE GLOW
+========================================================= */
+
+.solution-module-glow {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(255, 145, 88, 0.18),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(246, 102, 66, 0.06),
+      transparent 48%,
+      rgba(233, 74, 95, 0.04)
+    );
+
+  opacity:
+    0;
+
+  pointer-events:
+    none;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+.solution-module:hover
+.solution-module-glow {
+
+  opacity:
+    1;
+}
+
+
+/* =========================================================
+   15. MODULE CONTENT
+========================================================= */
+
+.solution-module-content {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  flex:
+    1 1 66%;
+
+  width:
+    66%;
+
+  max-width:
+    66%;
+
+  min-width:
+    0;
+
+  padding-left:
+    0;
+
+  padding-right:
+    14px;
+
+  border-right:
+    2px solid
+    rgba(246, 102, 66, 0.50);
+}
+
+.solution-module-reverse .solution-module-content {
+
+  padding-right:
+    0;
+
+  padding-left:
+    14px;
+
+  border-right:
+    0;
+
+  border-left:
+    2px solid
+    rgba(246, 102, 66, 0.50);
+}
+
+
+/* =========================================================
+   16. MODULE VISUAL
+   REDUCED IMAGE HEIGHT
+========================================================= */
+
+.solution-module-visual {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  flex:
+    1 1 34%;
+
+  width:
+    34%;
+
+  max-width:
+    34%;
+
+  min-width:
+    0;
+
+  /*
+    REDUCED FROM 340px
+  */
+  height:
+    220px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.22);
+
+  border-radius:
+    18px;
+
+  background:
+    #FFF0E7;
+
+  box-shadow:
+    0 12px 35px
+    rgba(14, 11, 63, 0.08),
+
+    0 0 25px
+    rgba(246, 102, 66, 0.07);
+}
+
+
+/* =========================================================
+   17. OPTIMIZATION VISUAL
+========================================================= */
+
+.solution-module-optimization
+.solution-module-visual {
+
+  border-color:
+    rgba(233, 74, 95, 0.22);
+
+  box-shadow:
+    0 12px 35px
+    rgba(14, 11, 63, 0.08),
+
+    0 0 25px
+    rgba(233, 74, 95, 0.08);
+}
+
+
+/* =========================================================
+   18. MODULE IMAGE
+========================================================= */
+
+.solution-module-visual img {
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  max-width:
+    100%;
+
+  object-fit:
+    cover;
+
+  object-position:
+    center;
+
+  opacity:
+    0.94;
+
+  transform:
+    scale(1.02);
+
+  transition:
+    transform 0.7s ease,
+    opacity 0.7s ease;
+}
+
+.solution-module:hover
+.solution-module-visual img {
+
+  opacity:
+    1;
+
+  transform:
+    scale(1.06);
+}
+
+
+/* =========================================================
+   19. MODULE EYEBROW
+========================================================= */
+
+.solution-module-eyebrow {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  margin:
+    0 0 18px;
+
+  padding:
+    8px 13px;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.25);
+
+  border-radius:
+    999px;
+
+  color:
+    var(--solutions-orange);
+
+  background:
+    rgba(246, 102, 66, 0.08);
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.12em;
+
+  line-height:
+    1.3;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   20. OPTIMIZATION EYEBROW
+========================================================= */
+
+.solution-module-optimization
+.solution-module-eyebrow {
+
+  color:
+    var(--solutions-red);
+
+  border-color:
+    rgba(233, 74, 95, 0.25);
+
+  background:
+    rgba(233, 74, 95, 0.08);
+}
+
+
+/* =========================================================
+   21. LOGISTICS EYEBROW
+========================================================= */
+
+.solution-module-logistics
+.solution-module-eyebrow {
+
+  color:
+    var(--solutions-navy);
+
+  border-color:
+    rgba(14, 11, 63, 0.16);
+
+  background:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   22. MODULE HEADING
+========================================================= */
+
+.solution-module h2 {
+
+  margin:
+   0 0 12px;
+
+  color:
+    var(--solutions-navy);
+
+  font-size:
+    clamp(
+      1.5rem,
+      3vw,
+      2.6rem
+    );
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    -0.05em;
+
+  line-height:
+    1.08;
+}
+
+.solution-module-meaning-label {
+ margin: 0 0 12px;
+ color: var(--solutions-orange);
+ font-size: 10px;
+ font-weight: 700;
+ letter-spacing: 0.14em;
+ line-height: 1.3;
+ text-transform: uppercase;
+}
+
+
+/* =========================================================
+   23. MODULE DESCRIPTION
+   BLACK TEXT
+========================================================= */
+
+.solution-module-description {
+
+ width:
+   100%;
+
+ max-width:
+   580px;
+
+ margin:
+   0 0 30px;
+
+ color:
+   #000000;
+
+ font-size:
+   16px;
+
+ line-height:
+   1.7;
+
+ text-align:
+   justify;
+}
+
+.solution-module-description p {
+
+ margin:
+   0 0 1.1em;
+
+ color:
+   #000000;
+
+ text-align:
+   justify;
+
+ line-height:
+   1.7;
+}
+
+.solution-module-description p:last-child {
+
+  margin-bottom:
+    0;
+}
+
+.solution-module-description p,
+.solution-module-description {
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+
+/* =========================================================
+   24. FEATURES
+========================================================= */
+
+.solution-features {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    20px;
+
+  margin:
+    0 0 30px;
+}
+
+
+/* =========================================================
+   25. FEATURE
+========================================================= */
+
+.solution-feature {
+
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    15px;
+
+  min-width:
+    0;
+}
+
+
+/* =========================================================
+   26. FEATURE ICON
+========================================================= */
+
+.solution-feature-icon {
+
+  display:
+    grid;
+
+  flex:
+    0 0 42px;
+
+  place-items:
+    center;
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.15);
+
+  border-radius:
+    11px;
+
+  color:
+    var(--solutions-orange);
+
+  background:
+    rgba(246, 102, 66, 0.08);
+
+  font-size:
+    19px;
+}
+
+
+/* =========================================================
+   27. SECOND FEATURE ICON
+========================================================= */
+
+.solution-feature:nth-child(2)
+.solution-feature-icon {
+
+  color:
+    var(--solutions-red);
+
+  border-color:
+    rgba(233, 74, 95, 0.15);
+
+  background:
+    rgba(233, 74, 95, 0.08);
+}
+
+
+/* =========================================================
+   28. FEATURE TITLE
+========================================================= */
+
+.solution-feature h3 {
+
+  margin:
+    0 0 5px;
+
+  color:
+    var(--solutions-navy);
+
+  font-size:
+    15px;
+
+  font-weight:
+    600;
+
+  line-height:
+    1.35;
+}
+
+
+/* =========================================================
+   29. FEATURE DESCRIPTION
+   BLACK TEXT
+========================================================= */
+
+.solution-feature p {
+
+  margin:
+    0;
+
+  color:
+    #000000;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.5;
+}
+
+
+/* =========================================================
+   30. STATISTICS
+========================================================= */
+
+.solution-stats {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(120px, 180px)
+    );
+
+  gap:
+    14px;
+
+  margin:
+    0 0 30px;
+}
+
+
+/* =========================================================
+   31. STAT CARD
+========================================================= */
+
+.solution-stat {
+
+  min-width:
+    0;
+
+  padding:
+    18px;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.18);
+
+  border-radius:
+    18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(255, 236, 224, 0.90)
+    );
+
+  box-shadow:
+    0 12px 35px
+    rgba(14, 11, 63, 0.06),
+
+    0 0 20px
+    rgba(246, 102, 66, 0.04);
+}
+
+
+/* =========================================================
+   32. STAT NUMBER
+========================================================= */
+
+.solution-stat strong {
+
+  display:
+    block;
+
+  margin:
+    0 0 5px;
+
+  color:
+    var(--solutions-orange);
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size:
+    2.2rem;
+
+  line-height:
+    1;
+}
+
+
+/* =========================================================
+   33. STAT LABEL
+========================================================= */
+
+.solution-stat span {
+
+  color:
+    #000000;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.45;
+
+  letter-spacing:
+    0.04em;
+}
+
+
+/* =========================================================
+   34. CHECK LIST
+========================================================= */
+
+.solution-check-list {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    15px;
+
+  margin:
+    0 0 30px;
+
+  padding:
+    0;
+
+  list-style:
+    none;
+}
+
+.solution-check-list li {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  min-width:
+    0;
+
+  color:
+    var(--solutions-navy);
+
+  font-size:
+    14px;
+
+  line-height:
+    1.4;
+}
+
+
+/* =========================================================
+   35. CHECK ICON
+========================================================= */
+
+.solution-check {
+
+  display:
+    grid;
+
+  flex:
+    0 0 24px;
+
+  place-items:
+    center;
+
+  width:
+    24px;
+
+  height:
+    24px;
+
+  border-radius:
+    50%;
+
+  color:
+    #FFFFFF;
+
+  background:
+    linear-gradient(
+      135deg,
+      #FF7A59,
+      #F66642
+    );
+
+  font-size:
+    12px;
+
+  font-weight:
+    700;
+
+  box-shadow:
+    0 5px 12px
+    rgba(246, 102, 66, 0.18);
+}
+
+
+/* =========================================================
+   36. MODULE LINKS
+========================================================= */
+
+.solution-module-link {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  color:
+    var(--solutions-orange);
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.4;
+
+  text-decoration:
+    none;
+
+  transition:
+    color 0.25s ease,
+    gap 0.25s ease;
+}
+
+.solution-module-link:hover {
+
+  gap:
+    15px;
+
+  color:
+    var(--solutions-red);
+}
+
+
+/* =========================================================
+   37. BOTTOM CTA
+========================================================= */
+
+.solutions-bottom-cta {
+
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    30px;
+
+  width:
+    min(1120px, 90%);
+
+  min-width:
+    0;
+
+  margin:
+    80px auto 0;
+
+  padding:
+    42px 48px;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.40);
+
+  border-radius:
+    24px;
+
+  background:
+
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 145, 88, 0.30),
+      transparent 42%
+    ),
+
+    linear-gradient(
+      180deg,
+      #FFD3BC 0%,
+      #FFE2D3 100%
+    );
+
+  box-shadow:
+    0 18px 45px
+    rgba(14, 11, 63, 0.08),
+
+    0 0 30px
+    rgba(246, 102, 66, 0.08);
+}
+
+
+/* =========================================================
+   38. CTA COPY
+========================================================= */
+
+.solutions-cta-copy {
+
+  flex:
+    1;
+
+  min-width:
+    0;
+}
+
+
+/* =========================================================
+   39. CTA HEADING
+========================================================= */
+
+.solutions-cta-copy h3 {
+
+  margin:
+    8px 0 0;
+
+  color:
+    var(--solutions-navy);
+
+  font-size:
+    clamp(
+      1.2rem,
+      2.2vw,
+      2rem
+    );
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    -0.05em;
+
+  line-height:
+    1.35;
+}
+
+
+/* =========================================================
+   40. CTA LABEL
+========================================================= */
+
+.solutions-bottom-cta > span {
+
+  color:
+    var(--solutions-orange);
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.18em;
+
+  line-height:
+    1.3;
+
+  text-transform:
+    uppercase;
+}
+
+.solutions-cta-copy > span {
+  color: #F66642;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   41. CTA CONTACT GRID
+========================================================= */
+
+.solutions-cta-contact {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(180px, 1fr)
+    );
+
+  gap:
+    12px;
+
+  margin:
+    20px 0 0;
+}
+
+
+/* =========================================================
+   42. CTA CONTACT ITEM
+========================================================= */
+
+.solutions-cta-contact-item {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    6px;
+
+  min-width:
+    0;
+
+  padding:
+    14px 16px;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.18);
+
+  border-radius:
+    16px;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+
+  color:
+    var(--solutions-navy);
+
+  text-decoration:
+    none;
+
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.solutions-cta-contact-item:hover {
+
+  border-color:
+    rgba(246, 102, 66, 0.55);
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   43. CTA CONTACT LABEL
+========================================================= */
+
+.solutions-cta-contact-item span {
+
+  color:
+    #000000;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    0.14em;
+
+  line-height:
+    1.3;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =========================================================
+   44. CTA CONTACT VALUE
+========================================================= */
+
+.solutions-cta-contact-item strong {
+
+  color:
+    var(--solutions-navy);
+
+  font-size:
+    0.96rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.01em;
+
+  line-height:
+    1.4;
+
+  overflow-wrap:
+    anywhere;
+}
+
+
+/* =========================================================
+   45. CTA BUTTON
+========================================================= */
+
+.solutions-cta-button {
+
+  flex-shrink:
+    0;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    44px;
+
+  padding:
+    13px 24px;
+
+  border:
+    0;
+
+  border-radius:
+    999px;
+
+  color:
+    #FFFFFF;
+
+  background:
+    linear-gradient(
+      135deg,
+      #FF7A59,
+      #F66642
+    );
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  line-height:
+    1.3;
+
+  text-align:
+    center;
+
+  text-decoration:
+    none;
+
+  box-shadow:
+    0 10px 28px
+    rgba(246, 102, 66, 0.25),
+
+    0 0 20px
+    rgba(246, 102, 66, 0.10);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.solutions-cta-button:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(246, 102, 66, 0.32),
+
+    0 0 25px
+    rgba(246, 102, 66, 0.16);
+}
+
+
+/* =========================================================
+   46. CONTACT SLIDE
+========================================================= */
+
+.solutions-contact-slide {
+
+  display:
+    block;
+}
+
+
+/* =========================================================
+   47. LARGE DESKTOP
+   1201px+
+========================================================= */
+
+@media (min-width: 1201px) {
+
+  .solutions-page {
+
+    padding-left:
+      6%;
+
+    padding-right:
+      6%;
+  }
+
+  .solutions-modules {
+
+    width:
+      min(1180px, 94%);
+  }
+
+  .solutions-bottom-cta {
+
+    width:
+      min(1120px, 90%);
+  }
+}
+
+
+/* =========================================================
+   48. DESKTOP / LAPTOP
+   901px - 1200px
+========================================================= */
+
+@media (min-width: 901px) and (max-width: 1200px) {
+
+  .solutions-page {
+
+    padding:
+      125px 4% 90px;
+  }
+
+  .solutions-hero {
+
+    width:
+      min(850px, 100%);
+
+    margin-bottom:
+      70px;
+  }
+
+  .solutions-hero h1 {
+
+    font-size:
+      clamp(
+        1.8rem,
+        3vw,
+        2.6rem
+      );
+
+    line-height:
+      1.02;
+  }
+
+  .solutions-hero p {
+
+    font-size:
+      16px;
+  }
+
+  .solutions-modules {
+
+    width:
+      100%;
+
+    gap:
+      24px;
+  }
+
+  /* REDUCED LAPTOP CARD */
+
+  .solution-module {
+
+    min-height:
+      220px;
+
+    gap:
+      28px;
+
+    padding:
+      22px 26px;
+  }
+
+  .solution-module-content {
+
+    width:
+      62%;
+
+    max-width:
+      62%;
+
+    flex-basis:
+      62%;
+  }
+
+  .solution-module-visual {
+
+    width:
+      38%;
+
+    max-width:
+      38%;
+
+    flex-basis:
+      38%;
+
+    height:
+      200px;
+  }
+
+  .solution-module h2 {
+
+    font-size:
+      clamp(
+        1.5rem,
+        3vw,
+        2.3rem
+      );
+  }
+
+  .solution-module-description {
+
+    font-size:
+      16px;
+  }
+
+  .solutions-bottom-cta {
+
+    width:
+      92%;
+
+    padding:
+      36px 40px;
+  }
+}
+
+
+/* =========================================================
+   49. TABLET
+   601px - 900px
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .solutions-page {
+
+    --navbar-height:
+      108px;
+
+    padding:
+      calc(var(--navbar-height) + 18px)
+      30px
+      75px;
+  }
+
+  .solutions-hero {
+
+    width:
+      100%;
+
+    max-width:
+      800px;
+
+    margin:
+      0 auto 65px;
+  }
+
+  .solutions-eyebrow {
+
+    margin-bottom:
+      18px;
+  }
+
+  .solutions-hero h1 {
+
+    max-width:
+      760px;
+
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+
+    font-size:
+      clamp(
+        2rem,
+        5vw,
+        2.8rem
+      );
+
+    line-height:
+      1.02;
+  }
+
+  .solutions-hero p {
+
+    max-width:
+      700px;
+
+    font-size:
+      16px;
+
+    line-height:
+      1.6;
+  }
+
+  .solutions-modules {
+
+    width:
+      100%;
+
+    max-width:
+      900px;
+
+    gap:
+      24px;
+  }
+
+  .solution-module,
+  .solution-module-reverse {
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      24px;
+
+    min-height:
+      auto;
+
+    padding:
+      28px;
+  }
+
+  .solution-module-content,
+  .solution-module-visual {
+
+    width:
+      100%;
+
+    max-width:
+      100%;
+  }
+
+  .solution-module-content {
+
+    flex-basis:
+      auto;
+  }
+
+  .solution-module-visual {
+
+    flex-basis:
+      auto;
+
+    height:
+      auto;
+
+    aspect-ratio:
+      16 / 9;
+
+    max-height:
+      260px;
+  }
+
+  .solution-module h2 {
+
+    font-size:
+      clamp(
+        1.5rem,
+        4vw,
+        2.3rem
+      );
+  }
+
+  .solution-module-description {
+
+    max-width:
+      700px;
+
+    font-size:
+      16px;
+  }
+
+  .solution-stats {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    max-width:
+      500px;
+  }
+
+  .solutions-bottom-cta {
+
+    width:
+      92%;
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    padding:
+      36px 40px;
+  }
+
+  .solutions-cta-contact {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    width:
+      100%;
+  }
+
+  .solutions-cta-button {
+
+    width:
+      100%;
+  }
+}
+
+
+/* =========================================================
+   50. SMALL TABLET / LARGE MOBILE
+   ≤ 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .solutions-page {
+
+    width:
+      100%;
+
+    max-width:
+      100%;
+
+    overflow-x:
+      hidden;
+  }
+
+  .solutions-page h1,
+  .solutions-page h2,
+  .solutions-page h3,
+  .solutions-page p {
+
+    overflow-wrap:
+      break-word;
+  }
+
+  .solution-module,
+  .solution-module-content,
+  .solution-module-visual,
+  .solutions-bottom-cta,
+  .solutions-cta-copy {
+
+    min-width:
+      0;
+  }
+}
+
+
+/* =========================================================
+   51. MOBILE
+   600px AND BELOW
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .solutions-page {
+
+    --navbar-height:
+      86px;
+
+    width:
+      100%;
+
+    max-width:
+      100%;
+
+    padding:
+      calc(var(--navbar-height) + 12px)
+      20px
+      60px;
+  }
+
+
+  /* -------------------------------------------------------
+     HERO
+  ------------------------------------------------------- */
+
+  .solutions-hero {
+
+    width:
+      100%;
+
+    margin:
+      0 auto 55px;
+  }
+
+  .solutions-eyebrow {
+
+    margin-bottom:
+      16px;
+
+    font-size:
+      11px;
+
+    letter-spacing:
+      0.18em;
+  }
+
+  .solutions-hero h1 {
+
+    margin-bottom:
+      20px;
+
+    font-size:
+      clamp(
+        1.7rem,
+        7vw,
+        2.3rem
+      );
+
+    line-height:
+      0.98;
+
+    letter-spacing:
+      -0.055em;
+  }
+
+  .solutions-hero p {
+
+    max-width:
+      100%;
+
+    font-size:
+      15px;
+
+    line-height:
+      1.6;
+  }
+
+
+  /* -------------------------------------------------------
+     MODULES
+  ------------------------------------------------------- */
+
+  .solutions-modules {
+
+    width:
+      100%;
+
+    gap:
+      20px;
+  }
+
+
+  /* -------------------------------------------------------
+     REDUCED MOBILE CARD
+  ------------------------------------------------------- */
+
+  .solution-module,
+  .solution-module-reverse {
+
+    flex-direction:
+      column;
+
+    align-items:
+      stretch;
+
+    gap:
+      22px;
+
+    min-height:
+      auto;
+
+    padding:
+      22px 18px;
+
+    border-radius:
+      20px;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTENT
+  ------------------------------------------------------- */
+
+  .solution-module-content {
+
+    width:
+      100%;
+
+    max-width:
+      100%;
+
+    padding-left:
+      12px;
+
+    flex-basis:
+      auto;
+  }
+
+
+  /* -------------------------------------------------------
+     VISUAL
+  ------------------------------------------------------- */
+
+  .solution-module-visual {
+
+    width:
+      100%;
+
+    max-width:
+      100%;
+
+    height:
+      auto;
+
+    aspect-ratio:
+      16 / 10;
+
+    max-height:
+      220px;
+
+    flex-basis:
+      auto;
+
+    border-radius:
+      16px;
+  }
+
+
+  /* -------------------------------------------------------
+     MODULE EYEBROW
+  ------------------------------------------------------- */
+
+  .solution-module-eyebrow {
+
+    margin-bottom:
+      14px;
+
+    padding:
+      7px 11px;
+
+    font-size:
+      10px;
+
+    letter-spacing:
+      0.10em;
+  }
+
+
+  /* -------------------------------------------------------
+     MODULE HEADING
+  ------------------------------------------------------- */
+
+  .solution-module h2 {
+
+    margin-bottom:
+      14px;
+
+    font-size:
+      clamp(
+        1.6rem,
+        7vw,
+        2rem
+      );
+
+    line-height:
+      1.08;
+  }
+
+
+  /* -------------------------------------------------------
+     MODULE DESCRIPTION
+  ------------------------------------------------------- */
+
+  .solution-module-description {
+
+    max-width:
+      100%;
+
+    margin-bottom:
+      20px;
+
+    font-size:
+      15px;
+
+    line-height:
+      1.6;
+  }
+
+
+  /* -------------------------------------------------------
+     FEATURES
+  ------------------------------------------------------- */
+
+  .solution-features {
+
+    gap:
+      17px;
+
+    margin-bottom:
+      26px;
+  }
+
+  .solution-feature {
+
+    gap:
+      12px;
+  }
+
+  .solution-feature-icon {
+
+    flex:
+      0 0 38px;
+
+    width:
+      38px;
+
+    height:
+      38px;
+
+    font-size:
+      17px;
+  }
+
+  .solution-feature h3 {
+
+    font-size:
+      14px;
+
+    line-height:
+      1.35;
+  }
+
+  .solution-feature p {
+
+    font-size:
+      12px;
+
+    line-height:
+      1.5;
+  }
+
+
+  /* -------------------------------------------------------
+     STATS
+  ------------------------------------------------------- */
+
+  .solution-stats {
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap:
+      10px;
+
+    width:
+      100%;
+  }
+
+  .solution-stat {
+
+    padding:
+      16px 12px;
+
+    border-radius:
+      16px;
+  }
+
+  .solution-stat strong {
+
+    font-size:
+      1.7rem;
+  }
+
+  .solution-stat span {
+
+    font-size:
+      11px;
+  }
+
+
+  /* -------------------------------------------------------
+     CHECK LIST
+  ------------------------------------------------------- */
+
+  .solution-check-list {
+
+    gap:
+      13px;
+  }
+
+  .solution-check-list li {
+
+    font-size:
+      13px;
+  }
+
+
+  /* -------------------------------------------------------
+     MODULE LINK
+  ------------------------------------------------------- */
+
+  .solution-module-link {
+
+    font-size:
+      13px;
+  }
+
+
+  /* -------------------------------------------------------
+     CTA
+  ------------------------------------------------------- */
+
+  .solutions-bottom-cta {
+
+    width:
+      100%;
+
+    margin-top:
+      55px;
+
+    padding:
+      30px 24px;
+
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      24px;
+
+    border-radius:
+      22px;
+  }
+
+  .solutions-cta-copy {
+
+    width:
+      100%;
+  }
+
+  .solutions-cta-copy h3 {
+
+    font-size:
+      1.35rem;
+
+    line-height:
+      1.3;
+  }
+
+  .solutions-cta-contact {
+
+    grid-template-columns:
+      1fr;
+
+    width:
+      100%;
+  }
+
+  .solutions-cta-button {
+
+    width:
+      100%;
+
+    min-height:
+      44px;
+
+    text-align:
+      center;
+  }
+}
+
+
+/* =========================================================
+   52. SMALL MOBILE
+   400px AND BELOW
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .solutions-page {
+
+    padding:
+      calc(var(--navbar-height) + 10px)
+      16px
+      55px;
+  }
+
+  .solutions-hero {
+
+    margin-bottom:
+      48px;
+  }
+
+  .solutions-hero h1 {
+
+    font-size:
+      clamp(
+        1.65rem,
+        8vw,
+        2rem
+      );
+  }
+
+  .solution-module,
+  .solution-module-reverse {
+
+    padding:
+      20px 16px;
+
+    gap:
+      20px;
+  }
+
+  .solution-module h2 {
+
+    font-size:
+      1.8rem;
+  }
+
+  .solution-module-visual {
+
+    aspect-ratio:
+      16 / 10;
+
+    max-height:
+      190px;
+  }
+
+  .solution-stats {
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .solution-stat {
+
+    padding:
+      15px 10px;
+  }
+
+  .solution-stat strong {
+
+    font-size:
+      1.5rem;
+  }
+
+  .solution-stat span {
+
+    font-size:
+      10px;
+  }
+
+  .solutions-bottom-cta {
+
+    padding:
+      26px 20px;
+  }
+}
+
+
+/* =========================================================
+   53. LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .solutions-page {
+
+    padding-top:
+      calc(var(--navbar-height) + 12px);
+  }
+
+  .solutions-hero {
+
+    margin-bottom:
+      40px;
+  }
+
+  .solution-module,
+  .solution-module-reverse {
+
+    gap:
+      20px;
+  }
+
+  .solution-module-visual {
+
+    max-height:
+      45vh;
+
+    aspect-ratio:
+      16 / 8;
+  }
+}
+
+
+/* =========================================================
+   54. TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  .solution-module:hover {
+
+    transform:
+      none;
+  }
+
+  .solution-module:hover
+  .solution-module-glow {
+
+    opacity:
+      0;
+  }
+
+  .solution-module:hover
+  .solution-module-visual img {
+
+    transform:
+      scale(1.02);
+  }
+
+  .solution-module-link:hover {
+
+    gap:
+      10px;
+  }
+
+  .solutions-cta-button:hover {
+
+    transform:
+      none;
+  }
+
+  .solutions-cta-contact-item:hover {
+
+    transform:
+      none;
+  }
+}
+
+
+/* =========================================================
+   55. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .solution-module,
+  .solution-module-link,
+  .solution-module-visual img,
+  .solutions-cta-button,
+  .solutions-cta-contact-item,
+  .solution-module-glow {
+
+    transition:
+      none;
+  }
+
+  .solution-module:hover {
+
+    transform:
+      none;
+  }
+}
+
+
+/* =========================================================
+   56. FINAL OVERFLOW SAFETY
+========================================================= */
+
+.solutions-page .solutions-hero,
+.solutions-page .solutions-modules,
+.solutions-page .solution-module,
+.solutions-page .solution-module-content,
+.solutions-page .solution-module-visual,
+.solutions-page .solution-feature,
+.solutions-page .solution-stat,
+.solutions-page .solutions-bottom-cta,
+.solutions-page .solutions-cta-copy,
+.solutions-page .solutions-cta-contact,
+.solutions-page .solutions-cta-contact-item {
+
+  min-width:
+    0;
+}
+
+.solutions-page .solution-module img {
+
+  max-width:
+    100%;
+}
+
+
+/* =========================================================
+   57. FINAL MOBILE TEXT SAFETY
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .solutions-page .solutions-hero h1,
+  .solutions-page .solution-module h2,
+  .solutions-page .solutions-cta-copy h3 {
+
+    white-space:
+      normal;
+  }
+}
+
+/* =========================================================
+   MEGHAAI SOLUTIONS
+   MOBILE ORDER FIX
+   ---------------------------------------------------------
+   MOBILE:
+   TITLE
+      ↓
+   IMAGE
+      ↓
+   CONTENT / DESCRIPTION
+========================================================= */
+
+@media (max-width: 600px) {
+
+  /* -------------------------------------------------------
+     SOLUTION CARD
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-module,
+  .solutions-page .solution-module-reverse {
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: stretch !important;
+
+    gap: 0 !important;
+
+    width: 100% !important;
+
+    min-height: auto !important;
+
+    padding: 22px 18px !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTENT BECOMES TRANSPARENT FLEX WRAPPER
+     
+     This allows the H2 and description to be positioned
+     separately without changing JSX.
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-module-content {
+
+    display: contents !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    flex: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     1. TITLE
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-module h2 {
+
+    order: 1 !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    margin: 0 0 20px !important;
+
+    padding: 0 !important;
+
+    color: var(--solutions-navy) !important;
+
+    font-size:
+      clamp(1.65rem, 7vw, 2rem) !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1.08 !important;
+
+    letter-spacing: -0.05em !important;
+
+    text-align: left !important;
+  }
+
+
+  /* -------------------------------------------------------
+     2. IMAGE
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-module-visual {
+
+    order: 2 !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    height: auto !important;
+
+    aspect-ratio: 16 / 10 !important;
+
+    max-height: 220px !important;
+
+    margin: 0 0 22px !important;
+
+    flex: none !important;
+
+    border-radius: 16px !important;
+
+    overflow: hidden !important;
+  }
+
+
+  .solutions-page .solution-module-visual img {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    max-width: 100% !important;
+
+    object-fit: cover !important;
+
+    object-position: center !important;
+
+    transform: scale(1.02) !important;
+  }
+
+
+  /* -------------------------------------------------------
+     3. DESCRIPTION / CONTENT
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-module-description {
+
+    order: 3 !important;
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    margin: 0 0 20px !important;
+
+    padding: 0 !important;
+
+    color: #000000 !important;
+
+    font-size: 15px !important;
+
+    line-height: 1.6 !important;
+
+    text-align: left !important;
+  }
+
+
+  .solutions-page .solution-module-description p {
+
+    width: 100% !important;
+
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    color: #000000 !important;
+
+    font-size: 15px !important;
+
+    line-height: 1.6 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     FEATURES — AFTER DESCRIPTION
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-features {
+
+    order: 4 !important;
+
+    width: 100% !important;
+
+    margin-top: 0 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     STATS — AFTER FEATURES
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-stats {
+
+    order: 5 !important;
+
+    width: 100% !important;
+
+    margin-top: 0 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     CHECK LIST — AFTER STATS
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-check-list {
+
+    order: 6 !important;
+
+    width: 100% !important;
+  }
+
+
+  /* -------------------------------------------------------
+     MODULE LINK — LAST
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-module-link {
+
+    order: 7 !important;
+
+    width: fit-content !important;
+
+    max-width: 100% !important;
+  }
+
+
+  /* -------------------------------------------------------
+     EYEBROW — IF PRESENT
+  ------------------------------------------------------- */
+
+  .solutions-page .solution-module-eyebrow {
+
+    order: 0 !important;
+
+    width: fit-content !important;
+
+    max-width: 100% !important;
+
+    margin-bottom: 12px !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .solutions-page .solution-module,
+  .solutions-page .solution-module-reverse {
+
+    padding: 20px 16px !important;
+  }
+
+
+  .solutions-page .solution-module h2 {
+
+    margin-bottom: 18px !important;
+
+    font-size:
+      clamp(1.55rem, 8vw, 1.8rem) !important;
+
+    line-height: 1.08 !important;
+  }
+
+
+  .solutions-page .solution-module-visual {
+
+    margin-bottom: 20px !important;
+
+    aspect-ratio: 16 / 10 !important;
+
+    max-height: 190px !important;
+
+    border-radius: 14px !important;
+  }
+
+
+  .solutions-page .solution-module-description,
+  .solutions-page .solution-module-description p {
+
+    font-size: 14px !important;
+
+    line-height: 1.58 !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .solutions-page .solution-module,
+  .solutions-page .solution-module-reverse {
+
+    padding: 18px 14px !important;
+  }
+
+
+  .solutions-page .solution-module h2 {
+
+    margin-bottom: 16px !important;
+
+    font-size: 1.55rem !important;
+  }
+
+
+  .solutions-page .solution-module-visual {
+
+    margin-bottom: 18px !important;
+
+    max-height: 180px !important;
+
+    border-radius: 13px !important;
+  }
+
+
+  .solutions-page .solution-module-description,
+  .solutions-page .solution-module-description p {
+
+    font-size: 13.5px !important;
+
+    line-height: 1.55 !important;
+  }
+}
+
+
+/* =========================================================
+   MEGHAAI SOLUTIONS — AGENTIC AI + PHYSICAL AI
+   ---------------------------------------------------------
+   DESKTOP / LAPTOP:
+
+   IMAGE LEFT → CONTENT RIGHT
+
+   EYEBROW
+   H2
+   DESCRIPTION
+
+   TABLET / MOBILE:
+
+   EYEBROW → H2 → IMAGE → DESCRIPTION
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.solutions-page .solutions-agentic-section {
+
+  position: relative;
+
+  width: 100%;
+
+  margin: 80px 0 0;
+
+  padding: 90px 0 96px;
+
+  background: transparent !important;
+
+  border-top:
+    1px solid
+    rgba(246, 102, 66, 0.14);
+
+  border-bottom:
+    1px solid
+    rgba(246, 102, 66, 0.14);
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   TOP GLOW
+========================================================= */
+
+.solutions-page .solutions-agentic-section::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+
+  right: -180px;
+
+  width: 520px;
+
+  height: 520px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 122, 89, 0.16) 0%,
+      rgba(255, 122, 89, 0.07) 35%,
+      transparent 70%
+    );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   BOTTOM GLOW
+========================================================= */
+
+.solutions-page .solutions-agentic-section::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: -220px;
+
+  left: -200px;
+
+  width: 520px;
+
+  height: 520px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(246, 102, 66, 0.12) 0%,
+      rgba(246, 102, 66, 0.05) 38%,
+      transparent 70%
+    );
+
+  filter: blur(55px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.solutions-page .solutions-agentic-container {
+
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      1180px,
+      calc(100% - 64px)
+    );
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   DESKTOP LAYOUT
+   IMAGE LEFT → CONTENT RIGHT
+========================================================= */
+
+.solutions-page .solutions-agentic-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: 64px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET HEADING
+
+   HIDDEN BY DEFAULT
+
+   IT WILL APPEAR ONLY BELOW 900px
+========================================================= */
+
+.solutions-page .solutions-agentic-mobile-heading {
+
+  display: none;
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.solutions-page .solutions-agentic-visual {
+
+  position: relative;
+
+  width: 100%;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(246, 102, 66, 0.20);
+
+  border-radius: 22px;
+
+  background: #FFFFFF;
+
+  box-shadow:
+    0 18px 45px
+    rgba(14, 11, 63, 0.08),
+
+    0 0 25px
+    rgba(246, 102, 66, 0.05);
+
+  order: 1;
+}
+
+
+/* =========================================================
+   IMAGE ELEMENT
+========================================================= */
+
+.solutions-page .solutions-agentic-visual img {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  max-width: 100%;
+
+  max-height: 520px;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.6s ease;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.solutions-page
+.solutions-agentic-visual:hover
+img {
+
+  transform:
+    scale(1.025);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.solutions-page .solutions-agentic-content {
+
+  width: 100%;
+
+  max-width: 560px;
+
+  min-width: 0;
+
+  order: 2;
+}
+
+
+/* =========================================================
+   DESKTOP EYEBROW
+========================================================= */
+
+.solutions-page .solutions-agentic-eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin:
+    0 0 18px;
+
+  color: #F66642;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MOBILE EYEBROW
+========================================================= */
+
+.solutions-page .solutions-agentic-mobile-eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin:
+    0 0 16px;
+
+  color: #F66642;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  line-height: 1.3;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   EYEBROW LINE
+========================================================= */
+
+.solutions-page .solutions-agentic-eyebrow-line {
+
+  display: block;
+
+  flex:
+    0 0 auto;
+
+  width: 30px;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #F66642,
+      #FF7A59
+    );
+}
+
+
+/* =========================================================
+   DESKTOP H2
+
+   THIS IS THE IMPORTANT FIX.
+
+   THIS H2 IS SHOWN ON DESKTOP / LAPTOP.
+========================================================= */
+
+.solutions-page .solutions-agentic-content h2 {
+
+  display: block;
+
+  margin:
+    0 0 20px;
+
+  color: #0E0B3F;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size:
+    clamp(
+      40px,
+      4.2vw,
+      56px
+    );
+
+  font-weight: 700;
+
+  letter-spacing: -0.065em;
+
+  line-height: 1.06;
+}
+
+
+/* =========================================================
+   DESKTOP H2 ORANGE PART
+========================================================= */
+
+.solutions-page
+.solutions-agentic-content
+h2 span {
+
+  color: #F66642;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET H2
+========================================================= */
+
+.solutions-page
+.solutions-agentic-mobile-heading
+h2 {
+
+  display: block;
+
+  margin: 0;
+
+  color: #0E0B3F;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size:
+    clamp(
+      36px,
+      5vw,
+      54px
+    );
+
+  font-weight: 700;
+
+  letter-spacing: -0.065em;
+
+  line-height: 1.06;
+}
+
+
+/* =========================================================
+   MOBILE / TABLET H2 ORANGE PART
+========================================================= */
+
+.solutions-page
+.solutions-agentic-mobile-heading
+h2 span {
+
+  color: #F66642;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.solutions-page .solutions-agentic-intro {
+
+  width: 100%;
+
+  max-width: 740px;
+
+  margin: 0;
+
+  color: #000000;
+
+  font-family:
+    "DM Sans",
+    sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DESKTOP / LAPTOP
+   901px+
+   
+   STRUCTURE:
+
+   IMAGE                 EYEBROW
+                         H2
+                         DESCRIPTION
+========================================================= */
+
+@media (min-width: 901px) {
+
+  .solutions-page
+  .solutions-agentic-mobile-heading {
+
+    display: none !important;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-content {
+
+    display: block;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-content
+  .solutions-agentic-eyebrow {
+
+    display: flex;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-content
+  h2 {
+
+    display: block;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   601px - 900px
+
+   STRUCTURE:
+
+   EYEBROW
+   H2
+
+   IMAGE
+
+   DESCRIPTION
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .solutions-page
+  .solutions-agentic-section {
+
+    margin-top: 65px;
+
+    padding:
+      72px 0 78px;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-container {
+
+    width:
+      calc(100% - 44px);
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-layout {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 30px;
+
+  }
+
+
+  /* ---------------------------------------------
+     MOBILE / TABLET HEADING
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-mobile-heading {
+
+    display: block;
+
+    order: 1;
+
+    width: 100%;
+
+  }
+
+
+  /* ---------------------------------------------
+     MOBILE / TABLET EYEBROW
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-mobile-eyebrow {
+
+    display: flex;
+
+    margin-bottom: 16px;
+
+  }
+
+
+  /* ---------------------------------------------
+     TABLET H2
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-mobile-heading
+  h2 {
+
+    font-size: 42px;
+
+    line-height: 1.08;
+
+  }
+
+
+  /* ---------------------------------------------
+     IMAGE
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-visual {
+
+    order: 2;
+
+    width: 100%;
+
+  }
+
+
+  /* ---------------------------------------------
+     CONTENT
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-content {
+
+    order: 3;
+
+    width: 100%;
+
+    max-width: 100%;
+
+  }
+
+
+  /* ---------------------------------------------
+     HIDE DUPLICATE DESKTOP EYEBROW
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-content
+  .solutions-agentic-eyebrow {
+
+    display: none;
+
+  }
+
+
+  /* ---------------------------------------------
+     HIDE DUPLICATE DESKTOP H2
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-content
+  h2 {
+
+    display: none;
+
+  }
+
+
+  /* ---------------------------------------------
+     DESCRIPTION
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-intro {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   600px AND BELOW
+
+   STRUCTURE:
+
+   EYEBROW
+   H2
+
+   IMAGE
+
+   DESCRIPTION
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .solutions-page
+  .solutions-agentic-section {
+
+    margin-top: 55px;
+
+    padding:
+      58px 0 64px;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-container {
+
+    width:
+      calc(100% - 30px);
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-layout {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 28px;
+
+  }
+
+
+  /* ---------------------------------------------
+     MOBILE HEADING
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-mobile-heading {
+
+    display: block;
+
+    order: 1;
+
+    width: 100%;
+
+  }
+
+
+  /* ---------------------------------------------
+     MOBILE EYEBROW
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-mobile-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    font-size: 12px;
+
+    letter-spacing: 0.12em;
+
+  }
+
+
+  /* ---------------------------------------------
+     MOBILE H2
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-mobile-heading
+  h2 {
+
+    font-size: 38px;
+
+    line-height: 1.08;
+
+  }
+
+
+  /* ---------------------------------------------
+     IMAGE
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-visual {
+
+    order: 2;
+
+    width: 100%;
+
+    border-radius: 16px;
+
+  }
+
+
+  /* ---------------------------------------------
+     CONTENT
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-content {
+
+    order: 3;
+
+    width: 100%;
+
+    max-width: 100%;
+
+  }
+
+
+  /* ---------------------------------------------
+     HIDE DESKTOP EYEBROW
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-content
+  .solutions-agentic-eyebrow {
+
+    display: none;
+
+  }
+
+
+  /* ---------------------------------------------
+     HIDE DESKTOP H2
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-content
+  h2 {
+
+    display: none;
+
+  }
+
+
+  /* ---------------------------------------------
+     DESCRIPTION
+  --------------------------------------------- */
+
+  .solutions-page
+  .solutions-agentic-intro {
+
+    max-width: 100%;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   400px AND BELOW
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .solutions-page
+  .solutions-agentic-section {
+
+    margin-top: 48px;
+
+    padding:
+      50px 0 55px;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-container {
+
+    width:
+      calc(100% - 24px);
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-mobile-heading
+  h2 {
+
+    font-size: 34px;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-intro {
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   360px AND BELOW
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .solutions-page
+  .solutions-agentic-mobile-heading
+  h2 {
+
+    font-size: 32px;
+
+  }
+
+
+  .solutions-page
+  .solutions-agentic-intro {
+
+    font-size: 16px;
+
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) {
+
+  .solutions-page
+  .solutions-agentic-visual:hover
+  img {
+
+    transform: none;
+
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .solutions-page
+  .solutions-agentic-section *,
+  .solutions-page
+  .solutions-agentic-section *::before,
+  .solutions-page
+  .solutions-agentic-section *::after {
+
+    transition: none !important;
+
+    animation: none !important;
+
+  }
+
+}
+

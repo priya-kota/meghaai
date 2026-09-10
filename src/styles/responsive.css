@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+.container,
+.section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+.container,
+.section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+.grid,
+.products-grid,
+.solutions-grid,
+.blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+.container,
+.section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+.grid,
+.products-grid,
+.solutions-grid,
+.blog-grid,
+.team-grid {
+    grid-template-columns: 1fr;
+  }
+
+.solution-box,
+.product-row,
+.product-row.reverse {
+    flex-direction: column;
+  }
+
+.solution-img img,
+.product-image img {
+    width: 100%;
+    height: auto;
+  }
+
+.solution-text,
+.product-content {
+    width: 100%;
+  }
+
+.solution-description p,
+.product-content p,
+.strategy-ai-wrapper p {
+    text-align: left;
+  }
+
+.premium-cards-wrapper,
+.partner-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+.partner-text {
+    text-align: center;
+  }
+
+.partner-image img {
+    height: auto;
+  }
+
+.ai-section ul {
+    grid-template-columns: 1fr;
+  }
+
+.hero h1,
+.hero-title {
+    font-size: 30px;
+    line-height: 1.15;
+  }
+
+  button,
+.btn {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+.container,
+.section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+.hero h1,
+.hero-title {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}

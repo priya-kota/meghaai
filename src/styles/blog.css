@@ -1,0 +1,2213 @@
+/* =========================================================
+   MEGHAAI BLOG / RESOURCES
+   Clean Sans-Serif Editorial Style
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.resources-page,
+.blog-wrapper {
+  width: 100%;
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  box-sizing: border-box;
+}
+
+.resources-page *,
+.blog-wrapper * {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   RESOURCES / BLOG LIST PAGE
+========================================================= */
+
+.resources-page {
+  width: 100%;
+  padding: 30px 8% 80px;
+  background:
+    linear-gradient(135deg, #fbc091 0%, #fdd0ae 38%, #ffd6c2 72%, #ff9b78 100%);
+  color: #0e0b3f;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.resources-title {
+  text-align: center;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 35px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  margin: 0 0 15px;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   BLOG GRID
+========================================================= */
+
+.blog-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   BLOG LINK
+========================================================= */
+
+.blog-link {
+  text-decoration: none;
+
+  color: inherit;
+}
+
+
+/* =========================================================
+   BLOG CARD
+========================================================= */
+
+.blog-card {
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  color: #111111;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   BLOG IMAGE
+========================================================= */
+
+.blog-image img {
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+/* =========================================================
+   BLOG CONTENT
+========================================================= */
+
+.blog-content {
+  padding: 20px;
+
+  color: #111111;
+}
+
+.blog-date {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 14px;
+
+  color: #666666;
+
+  margin-bottom: 10px;
+}
+
+.blog-content h3 {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  margin: 0 0 15px;
+
+  color: #000000;
+}
+
+
+/* =========================================================
+   CREATIVE BLOG TITLE
+========================================================= */
+
+.creative-blog-title {
+  position: relative;
+
+  padding-top: 4px;
+}
+
+
+.creative-blog-category {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: #729600;
+}
+
+
+.creative-blog-category::before {
+  content: "";
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #8eae19;
+
+  box-shadow:
+    0 0 7px rgba(142, 174, 25, 0.45);
+}
+
+
+.creative-blog-title h2 {
+  margin: 0;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: clamp(24px, 2.3vw, 34px);
+
+  line-height: 1.12;
+
+  font-weight: 700;
+
+  letter-spacing: -0.025em;
+
+  color: #000000 !important;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.blog-card:hover .creative-blog-title h2 {
+  color: #536d00 !important;
+
+  transform: translateX(3px);
+}
+
+
+.creative-blog-title .post-preview {
+  margin-top: 15px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  color: #555555 !important;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   READ MORE
+========================================================= */
+
+.read-more {
+  display: inline-block;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+  color: #4a6cf7;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.read-more:hover {
+  color: #233fc4;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   ARTICLE SECTION
+========================================================= */
+
+.article-section {
+  margin-bottom: 70px;
+
+  text-align: justify;
+
+  color: #111111;
+}
+
+
+.article-section:last-child {
+  margin-bottom: 40px;
+}
+
+
+.article-section h1,
+.article-section h2,
+.article-section h3 {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  margin: 0 0 25px;
+
+  line-height: 1.3;
+
+  color: #000000 !important;
+}
+
+
+.article-section p {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.9;
+
+  color: #333333 !important;
+
+  margin: 0 0 20px;
+
+  text-align: justify;
+}
+
+
+/* =========================================================
+   MAIN ARTICLE TITLE
+========================================================= */
+
+.blog-main-title {
+  position: relative;
+
+  max-width: 1000px;
+
+  margin: 0 0 18px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: clamp(34px, 4vw, 58px);
+
+  line-height: 1.06;
+
+  font-weight: 750;
+
+  letter-spacing: -0.035em;
+
+  color: #000000 !important;
+
+  text-align: left;
+
+  text-wrap: balance;
+}
+
+
+/* TITLE ACCENT */
+
+.blog-main-title::after {
+  content: "";
+
+  display: block;
+
+  width: 72px;
+
+  height: 3px;
+
+  margin-top: 24px;
+
+  background: #8eae19;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 10px rgba(142, 174, 25, 0.35);
+}
+
+
+/* =========================================================
+   ARTICLE SUBTITLE
+========================================================= */
+
+.blog-title-subtitle {
+  max-width: 780px;
+
+  margin: 22px 0 42px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  color: #555555 !important;
+
+  letter-spacing: -0.01em;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   ARTICLE IMAGES
+========================================================= */
+
+.article-image {
+  width: 100%;
+
+  border-radius: 20px;
+
+  margin: 25px 0 35px;
+
+  display: block;
+}
+
+
+.blog-inline-image {
+  width: 100%;
+
+  height: auto;
+
+  border-radius: 12px;
+
+  margin: 0;
+
+  display: block;
+}
+
+
+/* =========================================================
+   BLOG LIST
+========================================================= */
+
+.blog-list {
+  padding-left: 25px;
+
+  margin-top: 15px;
+
+  margin-bottom: 30px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #333333 !important;
+}
+
+
+.blog-list li {
+  margin-bottom: 18px;
+
+  color: #333333 !important;
+}
+
+
+.blog-list p {
+  margin-bottom: 20px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: #333333 !important;
+}
+
+
+/* =========================================================
+   ARTICLE CONTENT CARDS
+========================================================= */
+
+.blog-content-card,
+.blog-main-container {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 10px auto 80px;
+
+  padding: 60px;
+
+  background: #ffffff;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.08);
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   BLOG WRAPPER
+========================================================= */
+
+.blog-wrapper {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(135deg, #fbc091 0%, #fdd0ae 38%, #ffd6c2 72%, #ff9b78 100%);
+
+  color: #0e0b3f;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.blog-wrapper.dark {
+  background:
+    linear-gradient(135deg, #fbc091 0%, #fdd0ae 38%, #ffd6c2 72%, #ff9b78 100%);
+
+  color: #0e0b3f;
+}
+
+.blog-wrapper.dark .blog-main-container,
+.blog-wrapper.dark .blog-content-card {
+  background: #ffffff;
+
+  color: #111111;
+}
+
+.blog-wrapper.dark .article-section p {
+  color: #333333 !important;
+}
+
+.blog-wrapper.dark .premium-section {
+  background: rgba(128, 129, 130, 0.8);
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress-bar {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  height: 5px;
+
+  width: 100%;
+
+  background: #8eae19;
+
+  transform-origin: 0%;
+
+  z-index: 9999;
+}
+
+
+/* =========================================================
+   BLOG CONTAINER
+========================================================= */
+
+.blog-container {
+  width: 100%;
+
+  padding: 0 10% 80px;
+
+  flex: 1;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   BLOG HERO
+========================================================= */
+
+.blog-hero {
+  width: 100%;
+
+  text-align: center;
+
+  margin: 20px 0 40px;
+}
+
+
+.blog-hero h1 {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 42px;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+
+  margin-bottom: 10px;
+
+  color: #000000 !important;
+}
+
+
+/* =========================================================
+   BLOG TABS
+========================================================= */
+
+.blog-tabs {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 40px;
+
+  margin: 40px 0 60px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 18px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  position: relative;
+
+  color: #222222;
+}
+
+
+.active-tab {
+  color: #729600;
+
+  border-bottom: 2px solid #8eae19;
+
+  padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   AUTHOR BAR
+========================================================= */
+
+.author-bar {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  position: relative;
+
+  margin-top: 0;
+}
+
+
+.author-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.author-icon {
+  font-size: 30px;
+
+  color: #8eae19;
+}
+
+
+.author-name {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-weight: 700;
+
+  color: #111111 !important;
+}
+
+
+.author-meta {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 14px;
+
+  color: #666666 !important;
+}
+
+
+.dots {
+  cursor: pointer;
+
+  color: #333333;
+}
+
+
+.dropdown {
+  right: 0;
+
+  top: 40px;
+
+  background: #ffffff;
+
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   SHARE SECTION
+========================================================= */
+
+.share-section {
+  margin-top: 40px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #e5e5e5;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   SHARE OVERLAY
+========================================================= */
+
+.share-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 99999;
+}
+
+
+/* =========================================================
+   SHARE MODAL
+========================================================= */
+
+.share-modal {
+  position: relative;
+
+  background: #ffffff;
+
+  width: 420px;
+
+  padding: 50px 40px;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.2);
+
+  animation: fadeScale 0.25s ease;
+}
+
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-btn {
+  position: absolute;
+
+  top: 15px;
+
+  left: 15px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   SHARE TITLE
+========================================================= */
+
+.share-title {
+  margin-bottom: 30px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   SHARE ICONS
+========================================================= */
+
+.share-icons {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 30px;
+}
+
+
+.share-icons a,
+.copy-icon {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #f2f2f2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 22px;
+
+  color: #333333;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  text-decoration: none;
+}
+
+
+.share-icons a:hover,
+.copy-icon:hover {
+  background: #8eae19;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   RECENT POSTS
+========================================================= */
+
+.recent-posts {
+  width: 100%;
+
+  margin-top: 10px;
+}
+
+
+.recent-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+
+.recent-header h3 {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  color: #111111 !important;
+
+  margin: 0;
+}
+
+
+.recent-grid {
+  display: flex;
+
+  gap: 25px;
+
+  margin-top: 30px;
+
+  overflow-x: auto;
+
+  padding-bottom: 10px;
+}
+
+
+.recent-grid > * {
+  flex: 0 0 260px;
+}
+
+
+/* =========================================================
+   RECENT CARD
+========================================================= */
+
+.recent-card-wrapper {
+  position: relative;
+
+  perspective: 1000px;
+
+  height: 280px;
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+
+.recent-card-inner {
+  width: 100%;
+
+  height: 100%;
+
+  position: relative;
+
+  transition:
+    transform 0.4s ease;
+
+  transform-style: preserve-3d;
+}
+
+
+.recent-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+
+.recent-card-front,
+.recent-card-back {
+  position: absolute;
+
+  width: 100%;
+
+  height: 100%;
+
+  border-radius: 15px;
+
+  backface-visibility: hidden;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.08);
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   RECENT CARD BACK
+========================================================= */
+
+.recent-card-back {
+  transform: rotateY(180deg);
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+
+.recent-card-back p {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #444444 !important;
+}
+
+
+/* =========================================================
+   RECENT CARD TOP
+========================================================= */
+
+.recent-top-area {
+  display: block;
+
+  text-decoration: none;
+
+  color: #111111 !important;
+
+  cursor: pointer;
+}
+
+
+.recent-top-area img {
+  width: 100%;
+
+  height: 160px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+.recent-top-area h4 {
+  padding: 12px;
+
+  margin: 0;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+
+  color: #111111 !important;
+}
+
+
+/* =========================================================
+   RECENT CARD DIVIDER
+========================================================= */
+
+.recent-divider {
+  height: 1px;
+
+  background: #e5e7eb;
+
+  margin: 0 10px;
+}
+
+
+/* =========================================================
+   RECENT CARD BOTTOM / STATS
+========================================================= */
+
+.recent-bottom-area {
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: center;
+
+  padding: 12px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 14px;
+
+  color: #333333 !important;
+}
+
+
+.recent-bottom-area span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #333333 !important;
+}
+
+
+.recent-bottom-area svg {
+  color: #555555 !important;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   LIKE BUTTON
+========================================================= */
+
+.like-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  color: #333333 !important;
+
+  transition: 0.2s ease;
+}
+
+
+.like-btn:hover {
+  transform: scale(1.03);
+}
+
+
+.heart {
+  font-size: 18px;
+
+  cursor: pointer;
+
+  color: #555555 !important;
+
+  transition: 0.2s ease;
+}
+
+
+.heart.filled {
+  color: red !important;
+
+  transform: scale(1.15);
+}
+
+
+.like-count {
+  margin-left: 3px;
+
+  color: #333333 !important;
+}
+
+
+/* =========================================================
+   READ MORE BUTTON
+========================================================= */
+
+.read-more-btn {
+  text-decoration: none;
+
+  background: #8eae19;
+
+  color: #ffffff !important;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-align: center;
+
+  transition: 0.3s ease;
+}
+
+
+.read-more-btn:hover {
+  background: #111111;
+
+  color: #ffffff !important;
+}
+
+
+/* =========================================================
+   POST STATS
+   VISUAL:
+   👁 86     💬 0     ♡ 0
+========================================================= */
+
+.post-stats {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  color: #333333 !important;
+}
+
+
+.post-stats span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #333333 !important;
+}
+
+
+.post-stats svg {
+  color: #555555 !important;
+
+  font-size: 14px;
+
+  flex-shrink: 0;
+}
+
+
+/* Like icon */
+.post-stats .heart {
+  color: #555555 !important;
+}
+
+
+.post-stats .heart.filled {
+  color: red !important;
+}
+
+
+/* Like button inside stats */
+.post-stats .like-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #333333 !important;
+}
+
+
+/* Like number */
+.post-stats .like-count {
+  color: #333333 !important;
+
+  margin-left: 0;
+}
+
+
+/* =========================================================
+   BLOG CARD STATS
+========================================================= */
+
+.blog-card .views,
+.blog-card .comments,
+.blog-card .likes,
+.blog-card .stats,
+.blog-card .post-stats {
+  color: #333333 !important;
+}
+
+
+.blog-card .stats span,
+.blog-card .post-stats span {
+  color: #333333 !important;
+}
+
+
+.blog-card .stats svg,
+.blog-card .post-stats svg {
+  color: #555555 !important;
+}
+
+
+/* =========================================================
+   COMMENTS
+========================================================= */
+
+.comments-section {
+  margin-top: 70px;
+
+  background: #ffffff;
+
+  border: 1px solid #dddddd;
+
+  border-radius: 15px;
+
+  padding: 25px;
+
+  color: #111111;
+}
+
+
+.comments-section h2,
+.comments-section p {
+  color: #111111 !important;
+}
+
+
+.comments-section textarea {
+  width: 100%;
+
+  height: 120px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid #cccccc;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 15px;
+
+  color: #111111;
+
+  background: #ffffff;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   SEE ALL
+========================================================= */
+
+.see-all {
+  background: transparent;
+
+  border: 1px solid #090909;
+
+  padding: 6px 15px;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  color: #111111;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 13px;
+}
+
+
+.see-all a {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+.see-all:hover {
+  background: #000000;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   SCROLL TO TOP
+========================================================= */
+
+.scroll-top-btn {
+  position: fixed;
+
+  bottom: 40px;
+
+  right: 40px;
+
+  width: 48px;
+
+  height: 48px;
+
+  background: #0f172a;
+
+  color: #ffffff;
+
+  border: none;
+
+  padding: 0;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 20px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.3);
+
+  transition: all 0.3s ease;
+
+  z-index: 1000;
+}
+
+
+.scroll-top-btn:hover {
+  background: #8eae19;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 99999;
+}
+
+
+.login-box {
+  background: #ffffff;
+
+  padding: 40px;
+
+  border-radius: 12px;
+
+  width: 400px;
+
+  text-align: center;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   PREMIUM SECTIONS
+========================================================= */
+
+.premium-section {
+  display: flex;
+
+  width: 100%;
+
+  gap: 50px;
+
+  align-items: center;
+
+  padding: 50px 5%;
+
+  border-radius: 20px;
+
+  margin-bottom: 40px;
+
+  background: #ffffff;
+
+  color: #111111;
+}
+
+
+.row-normal {
+  flex-direction: row;
+}
+
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+
+.section-container {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 40px 5%;
+}
+
+
+.section-image {
+  width: 100%;
+
+  max-width: 1000px;
+
+  height: 650px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+
+.section-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+
+.section-text {
+  max-width: 900px;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  line-height: 1.8;
+
+  text-align: justify;
+
+  color: #333333;
+}
+
+
+.section-text h2 {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  text-align: center;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  margin-bottom: 0;
+
+  color: #111111;
+}
+
+
+/* =========================================================
+   BLOG TOP BAR
+========================================================= */
+
+.blog-top-bar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  max-width: 1200px;
+
+  margin: 30px auto 10px;
+
+  padding: 0 20px;
+
+  position: relative;
+
+  z-index: 10;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+}
+
+
+.blog-top-bar-list {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 15px;
+
+  max-width: 1200px;
+
+  margin: 20px auto 10px;
+
+  padding: 15px 20px 0;
+
+  position: relative;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   BLOG CLOSE BUTTON
+========================================================= */
+
+.blog-close-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: #f66642;
+
+  border: 1px solid rgba(246, 102, 66, 0.9);
+
+  color: #ffffff !important;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+
+  transition: all 0.25s ease;
+
+  box-shadow:
+    0 8px 22px rgba(246, 102, 66, 0.28);
+
+  opacity: 1;
+
+  visibility: visible;
+
+  position: relative;
+
+  z-index: 20;
+}
+
+
+.blog-close-button:hover {
+  background: #d95235;
+
+  border-color: #d95235;
+
+  transform: translateY(-2px);
+
+  color: #ffffff !important;
+
+  box-shadow:
+    0 10px 24px rgba(246, 102, 66, 0.35);
+}
+
+
+.blog-close-icon {
+  font-size: 15px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   BLOG CATEGORY LINKS
+========================================================= */
+
+.blog-category-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+
+.blog-category-links a {
+  color: #555555;
+
+  text-decoration: none;
+
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: color 0.2s ease;
+}
+
+
+.blog-category-links a:hover {
+  color: #000000;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .blog-container {
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+  .blog-content-card,
+  .blog-main-container {
+    padding: 45px;
+  }
+
+  .premium-section {
+    gap: 30px;
+  }
+
+  .section-image {
+    height: 500px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .resources-page {
+    padding: 25px 5% 60px;
+  }
+
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .blog-container {
+    padding: 0 5% 60px;
+  }
+
+
+  .blog-content-card,
+  .blog-main-container {
+    padding: 30px 24px;
+
+    border-radius: 20px;
+  }
+
+
+  .blog-main-title {
+    font-size: 36px;
+
+    line-height: 1.08;
+  }
+
+
+  .blog-title-subtitle {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+
+  .article-section h1,
+  .article-section h2,
+  .article-section h3 {
+    font-size: 24px;
+  }
+
+
+  .article-section p {
+    font-size: 16px;
+
+    line-height: 1.8;
+  }
+
+
+  .premium-section {
+    flex-direction: column;
+
+    padding: 30px 5%;
+  }
+
+
+  .row-normal,
+  .row-reverse {
+    flex-direction: column;
+  }
+
+
+  .section-image {
+    height: 400px;
+  }
+
+
+  .section-text {
+    max-width: 100%;
+  }
+
+
+  .section-text h2 {
+    font-size: 26px;
+  }
+
+
+  .blog-top-bar {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+
+  .blog-category-links {
+    flex-wrap: wrap;
+
+    gap: 12px;
+  }
+
+
+  .recent-grid {
+    gap: 18px;
+  }
+
+
+  .recent-grid > * {
+    flex: 0 0 240px;
+  }
+
+
+  .share-section {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .post-stats {
+    gap: 15px;
+
+    flex-wrap: wrap;
+  }
+
+
+  .scroll-top-btn {
+    right: 20px;
+
+    bottom: 20px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .resources-title {
+    font-size: 28px;
+  }
+
+
+  .blog-main-title {
+    font-size: 30px;
+  }
+
+
+  .blog-title-subtitle {
+    font-size: 15px;
+  }
+
+
+  .blog-content-card,
+  .blog-main-container {
+    padding: 25px 18px;
+
+    border-radius: 16px;
+  }
+
+
+  .article-section p {
+    font-size: 15px;
+  }
+
+
+  .article-section h1,
+  .article-section h2,
+  .article-section h3 {
+    font-size: 21px;
+  }
+
+
+  .section-image {
+    height: 300px;
+  }
+
+
+  .share-modal {
+    width: calc(100% - 30px);
+
+    padding: 45px 25px;
+  }
+
+
+  .share-icons {
+    gap: 15px;
+  }
+
+
+  .share-icons a,
+  .copy-icon {
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 18px;
+  }
+
+
+  .post-stats {
+    font-size: 13px;
+
+    gap: 12px;
+  }
+}
+
+/* =========================================================
+   FORCE BLOG TITLE + STATS VISIBILITY
+========================================================= */
+
+/* ARTICLE TITLE */
+.blog-content-card h1,
+.blog-content-card h2,
+.blog-content-card h3,
+.blog-main-container h1,
+.blog-main-container h2,
+.blog-main-container h3,
+.blog-hero h1,
+.blog-main-title {
+  color: #000000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+
+/* ARTICLE TEXT */
+.blog-content-card p,
+.blog-main-container p,
+.article-section p {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+
+/* AUTHOR */
+.blog-content-card .author-name,
+.blog-main-container .author-name,
+.author-name {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+
+/* DATE / META */
+.blog-content-card .author-meta,
+.blog-main-container .author-meta,
+.author-meta {
+  color: #333333 !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   VIEWS / COMMENTS / LIKES
+========================================================= */
+
+/* The entire statistics row */
+.blog-content-card .post-stats,
+.blog-main-container .post-stats,
+.post-stats {
+  display: flex !important;
+
+  align-items: center !important;
+
+  gap: 25px !important;
+
+  color: #000000 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  font-size: 14px !important;
+
+  font-weight: 600 !important;
+}
+
+
+/* Every direct child */
+.blog-content-card .post-stats > *,
+.blog-main-container .post-stats > *,
+.post-stats > * {
+  color: #000000 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+
+  gap: 6px !important;
+}
+
+
+/* Every span */
+.blog-content-card .post-stats span,
+.blog-main-container .post-stats span,
+.post-stats span {
+  color: #000000 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* Every icon */
+.blog-content-card .post-stats svg,
+.blog-main-container .post-stats svg,
+.post-stats svg {
+  color: #000000 !important;
+
+  fill: currentColor !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* Heart */
+.blog-content-card .post-stats .heart,
+.blog-main-container .post-stats .heart,
+.post-stats .heart {
+  color: #000000 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* Liked heart remains red */
+.blog-content-card .post-stats .heart.filled,
+.blog-main-container .post-stats .heart.filled,
+.post-stats .heart.filled {
+  color: #ff0000 !important;
+}
+
+
+/* Like number */
+.blog-content-card .like-count,
+.blog-main-container .like-count,
+.post-stats .like-count {
+  color: #000000 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   IF STATS ARE NOT USING .post-stats
+========================================================= */
+
+/* Common possible stat containers */
+.blog-content-card .views,
+.blog-content-card .comments,
+.blog-content-card .likes,
+.blog-content-card .view-count,
+.blog-content-card .comment-count,
+.blog-content-card .like-count,
+
+.blog-main-container .views,
+.blog-main-container .comments,
+.blog-main-container .likes,
+.blog-main-container .view-count,
+.blog-main-container .comment-count,
+.blog-main-container .like-count {
+  color: #000000 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   WHITE CARD = BLACK CONTENT
+========================================================= */
+
+.blog-content-card,
+.blog-main-container {
+  background: #ffffff !important;
+
+  color: #000000 !important;
+}
+
+
+/* Force ALL text inside white article cards dark */
+.blog-content-card *,
+.blog-main-container * {
+  opacity: 1;
+}
+
+
+/* But don't override images */
+.blog-content-card img,
+.blog-main-container img {
+  opacity: 1;
+}
+
+
+/* Links */
+.blog-content-card a,
+.blog-main-container a {
+  color: #000000;
+}
+
+
+/* Read more can remain green/blue if needed */
+.blog-content-card .read-more,
+.blog-main-container .read-more {
+  color: #4a6cf7 !important;
+}
