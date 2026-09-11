@@ -182,6 +182,14 @@ const Footer = () => {
               Cookie Policy
             </div>
 
+            <button
+              type="button"
+              className="footer-cookie-settings"
+              onClick={openPreferences}
+            >
+              Manage Preferences
+            </button>
+
           </div>
 
         </div>

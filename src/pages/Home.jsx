@@ -132,10 +132,14 @@ function Home() {
             </span>
               <img 
               src={c6} 
-              alt="Customer 6" />
+              alt="Customer 6"
+              className="customer-logo-large customer-logo-c6"
+              />
               <img 
               src={c7} 
-              alt="Customer 7" />
+              alt="Customer 7"
+              className="customer-logo-large"
+              />
             </div>
           </div>
         </div>

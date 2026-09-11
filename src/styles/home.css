@@ -3852,9 +3852,9 @@ span:last-child {
 
 .home-page .home-hero-proof-logos img {
   flex: 0 0 auto;
-  height: clamp(60px, 6.2vw, 72px);
+  width: clamp(112px, 10vw, 132px);
+  height: clamp(56px, 5.4vw, 68px);
   padding: 0;
-  width: auto;
   object-fit: contain;
 
   border: none;
@@ -3870,7 +3870,8 @@ span:last-child {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  height: clamp(52px, 5.4vw, 64px);
+  width: clamp(112px, 10vw, 132px);
+  height: clamp(56px, 5.4vw, 68px);
   padding: 0;
   border: none;
   border-radius: 0;
@@ -3879,7 +3880,8 @@ span:last-child {
 }
 
 .home-page .home-hero-proof-logos .customer-logo-emphasis-card img {
-  height: clamp(68px, 7vw, 80px);
+  width: 100%;
+  height: 100%;
   padding: 0;
   border: 0;
   background: transparent;
@@ -3887,8 +3889,18 @@ span:last-child {
   filter: contrast(1.12) saturate(1.1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.14));
 }
 
+.home-page .home-hero-proof-logos img.customer-logo-large {
+  width: clamp(132px, 12vw, 156px);
+  height: clamp(66px, 6.4vw, 78px);
+}
+
+.home-page .home-hero-proof-logos img.customer-logo-c6 {
+  width: clamp(172px, 16vw, 204px);
+  height: clamp(86px, 8.4vw, 102px);
+}
+
 .home-page .home-hero-proof-logos .customer-logo-c3-emphasis-card img {
-  transform: scale(1.5);
+  transform: none;
 }
 
 .home-page .home-hero-proof-logos .customer-logo-high-contrast {

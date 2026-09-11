@@ -1,8 +1,16 @@
-import { useState, useEffect } from 'react';
+import {
+  createContext,
+  createElement,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
 const COOKIE_CONSENT_KEY = 'meghaai_cookie_consent';
+const CookieConsentContext = createContext(null);
 
-export const useCookieConsent = () => {
+const useCookieConsentState = () => {
   const [consent, setConsent] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
@@ -13,12 +21,17 @@ export const useCookieConsent = () => {
     const saved = localStorage.getItem(COOKIE_CONSENT_KEY);
     
     if (saved) {
-      const parsed = JSON.parse(saved);
-      setConsent(parsed);
+      try {
+        const parsed = JSON.parse(saved);
+        setConsent(parsed);
+      } catch {
+        localStorage.removeItem(COOKIE_CONSENT_KEY);
+      }
     }
-    
-    // Always show banner on page load/refresh
+
+    // Show the banner once each time the website is loaded.
     setShowBanner(true);
+
     setIsLoaded(true);
   }, []);
 
@@ -58,13 +71,13 @@ export const useCookieConsent = () => {
     setShowPreferences(false);
   };
 
-  const openPreferences = () => {
+  const openPreferences = useCallback(() => {
     setShowPreferences(true);
-  };
+  }, []);
 
-  const closePreferences = () => {
+  const closePreferences = useCallback(() => {
     setShowPreferences(false);
-  };
+  }, []);
 
   const resetConsent = () => {
     localStorage.removeItem(COOKIE_CONSENT_KEY);
@@ -93,4 +106,24 @@ export const useCookieConsent = () => {
     setShowBanner,
     setShowPreferences,
   };
+};
+
+export const CookieConsentProvider = ({ children }) => {
+  const value = useCookieConsentState();
+
+  return createElement(
+    CookieConsentContext.Provider,
+    { value },
+    children,
+  );
+};
+
+export const useCookieConsent = () => {
+  const context = useContext(CookieConsentContext);
+
+  if (!context) {
+    throw new Error('useCookieConsent must be used within CookieConsentProvider');
+  }
+
+  return context;
 };

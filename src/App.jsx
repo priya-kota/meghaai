@@ -76,8 +76,9 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import CookieConsent from "./components/layout/CookieConsent";
 import CookiePreferences from "./components/layout/CookiePreferences";
+import { CookieConsentProvider } from "./hooks/useCookieConsent";
 
-// import FloatingCTA from "./components/layout/FloatingCTA";
+import FloatingCTA from "./components/layout/FloatingCTA";
 
 /* Main pages */
 import Home from "./pages/Home";
@@ -109,7 +110,7 @@ import BlogDetail9 from "./pages/BlogDetail9";
 
 function App() {
   return (
-    <>
+    <CookieConsentProvider>
       {/* <AmbientBackground /> */}
 
       {/* Global navigation */}
@@ -172,14 +173,14 @@ function App() {
         <Route path="/cookie-policy" element={<CookiePolicy />} />
       </Routes>
       {/* Global Floating CTA */}
-      {/* <FloatingCTA /> */}
+       <FloatingCTA /> 
       {/* Global footer */}
       <Footer />
 
       {/* Global Cookie Consent */}
       <CookieConsent />
       <CookiePreferences />
-    </>
+    </CookieConsentProvider>
   );
 }
 

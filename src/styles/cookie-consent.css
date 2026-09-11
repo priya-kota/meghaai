@@ -417,6 +417,13 @@
   font-weight: 400;
 }
 
+.cookie-policy-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
 /* =========================================================
    TOGGLE SWITCH
    ========================================================= */

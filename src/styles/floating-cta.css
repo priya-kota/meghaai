@@ -1083,4 +1083,1283 @@
   .demo-booking-primary {
     transition: none;
   }
+}/* =========================================================
+   MEGHAAI FLOATING CHAT
+   ========================================================= */
+
+.meghaai-floating-chat {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 9000;
+}
+
+
+/* =========================================================
+   FLOATING ASK US BUTTON — DARK NAVY
+   ========================================================= */
+
+.floating-chat-button {
+  position: relative;
+
+  min-width: 132px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 18px 0 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 30px;
+
+  /* KEEP DARK NAVY */
+  background: linear-gradient(
+    135deg,
+    #071f3b 0%,
+    #0b315d 55%,
+    #124575 100%
+  );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 14px 32px rgba(7, 35, 65, 0.28),
+    0 5px 14px rgba(7, 35, 65, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.floating-chat-button:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 18px 42px rgba(7, 35, 65, 0.34),
+    0 6px 16px rgba(7, 35, 65, 0.18);
+}
+
+.floating-chat-button:active {
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   AI GEAR
+   ========================================================= */
+
+.meghaai-ai-gear {
+  width: 34px;
+  height: 34px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  color: #ffffff;
+}
+
+.floating-chat-label {
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  letter-spacing: -0.1px;
+}
+
+/* =========================================================
+   ONLINE INDICATOR
+   ========================================================= */
+
+.floating-chat-pulse {
+  position: absolute;
+
+  top: 5px;
+  right: 5px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #45d483;
+
+  border: 2px solid #071f3b;
+
+  animation: floatingPulse 2.2s infinite;
+}
+
+/* =========================================================
+   AI GEAR ICON
+   ========================================================= */
+
+.meghaai-ai-gear {
+  width: 34px;
+  height: 34px;
+
+  display: block;
+
+  flex-shrink: 0;
+}
+
+.floating-chat-label {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  letter-spacing: -0.1px;
+}
+
+/* =========================================================
+   ONLINE PULSE
+   ========================================================= */
+
+.floating-chat-pulse {
+  position: absolute;
+
+  top: 5px;
+  right: 5px;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #45d483;
+
+  border: 2px solid #238fe2;
+
+  animation: floatingPulse 2.2s infinite;
+}
+
+@keyframes floatingPulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(69, 212, 131, 0.45);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 7px rgba(69, 212, 131, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(69, 212, 131, 0);
+  }
+}
+
+/* =========================================================
+   CHAT OVERLAY
+   ========================================================= */
+
+.meghaai-chat-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 10000;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  padding: 28px;
+
+  background: rgba(4, 18, 34, 0.08);
+
+  animation: chatOverlayIn 0.2s ease;
+}
+
+@keyframes chatOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   CHAT WINDOW
+   ========================================================= */
+
+.meghaai-chat-window {
+  width: min(
+    430px,
+    calc(100vw - 56px)
+  );
+
+  height: min(
+    680px,
+    calc(100vh - 56px)
+  );
+
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(11, 49, 93, 0.10);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(7, 35, 65, 0.20),
+    0 10px 30px rgba(7, 35, 65, 0.10);
+
+  animation:
+    chatWindowIn 0.28s
+    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes chatWindowIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================================
+   LIGHT HEADER
+   ========================================================= */
+
+.meghaai-chat-header {
+  flex-shrink: 0;
+
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 17px 20px;
+
+  /*
+     LIGHT HEADER:
+     Allows the navy MeghaAI logo to remain visible.
+  */
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef7fd 0%,
+      #e3f1fa 55%,
+      #d8ebf8 100%
+    );
+
+  color: #0b315d;
+
+  border-bottom: 1px solid
+    rgba(11, 49, 93, 0.08);
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.meghaai-chat-brand {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.meghaai-chat-logo {
+  width: 68px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: 0;
+
+  overflow: visible;
+}
+
+.meghaai-chat-logo img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  background: transparent;
+}
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.meghaai-chat-brand-text {
+  min-width: 0;
+}
+
+.meghaai-chat-brand-text h2 {
+  margin: 0;
+
+  color: #0b315d;
+
+  font-size: 15px;
+  font-weight: 750;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.15px;
+}
+
+.meghaai-chat-status {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 5px;
+
+  color: #60758a;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #32bd70;
+
+  box-shadow:
+    0 0 7px rgba(50, 189, 112, 0.6);
+}
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.meghaai-chat-close {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(11, 49, 93, 0.12);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.65);
+
+  color: #0b315d;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.meghaai-chat-close svg {
+  width: 19px;
+  height: 19px;
+}
+
+.meghaai-chat-close:hover {
+  background: #ffffff;
+
+  transform: rotate(4deg);
+}
+
+/* =========================================================
+   CHAT BODY
+   ========================================================= */
+
+.meghaai-chat-body {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+
+  padding: 22px 18px 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #ffffff 30%
+    );
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(11, 49, 93, 0.18)
+    transparent;
+}
+
+.meghaai-chat-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.meghaai-chat-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.meghaai-chat-body::-webkit-scrollbar-thumb {
+  background:
+    rgba(11, 49, 93, 0.18);
+
+  border-radius: 10px;
+}
+
+/* =========================================================
+   MESSAGE ROW
+   ========================================================= */
+
+.chat-message-row {
+  width: 100%;
+
+  display: flex;
+
+  margin-bottom: 15px;
+}
+
+.assistant-message-row {
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  gap: 8px;
+}
+
+.user-message-row {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   ASSISTANT AVATAR
+   ========================================================= */
+
+.assistant-message-avatar {
+  width: 28px;
+  height: 28px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  border: 1px solid
+    rgba(11, 49, 93, 0.08);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 3px 8px
+    rgba(7, 35, 65, 0.07);
+}
+
+.assistant-message-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  padding: 3px;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.chat-message {
+  max-width: 78%;
+
+  padding: 11px 14px;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+
+  word-break: break-word;
+
+  white-space: normal;
+}
+
+.chat-message-line {
+  display: block;
+
+  min-height: 1px;
+}
+
+/* =========================================================
+   ASSISTANT MESSAGE
+   ========================================================= */
+
+.assistant-message {
+  color: #26384c;
+
+  background: #ffffff;
+
+  border: 1px solid
+    rgba(11, 49, 93, 0.08);
+
+  border-radius:
+    15px 15px 15px 4px;
+
+  box-shadow:
+    0 4px 12px
+    rgba(7, 35, 65, 0.045);
+}
+
+/* =========================================================
+   USER MESSAGE
+   ========================================================= */
+
+.user-message {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b315d,
+      #164c7c
+    );
+
+  border-radius:
+    15px 15px 4px 15px;
+
+  box-shadow:
+    0 5px 14px
+    rgba(11, 49, 93, 0.14);
+}
+
+/* =========================================================
+   SUGGESTIONS
+   ========================================================= */
+
+.chat-suggestions {
+  margin-top: 4px;
+
+  padding-left: 36px;
+}
+
+.suggestions-heading {
+  margin-bottom: 10px;
+
+  color: #627387;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+}
+
+.suggestion-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+/* =========================================================
+   SUGGESTION BUTTON
+   ========================================================= */
+
+.suggestion-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 10px 11px;
+
+  border: 1px solid
+    rgba(11, 49, 93, 0.09);
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  color: #203b57;
+
+  font-family: inherit;
+
+  font-size: 11.5px;
+
+  font-weight: 600;
+
+  line-height: 1.35;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 2px 7px
+    rgba(7, 35, 65, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.suggestion-button span {
+  flex: 1;
+}
+
+.suggestion-button svg {
+  width: 17px;
+  height: 17px;
+
+  flex-shrink: 0;
+
+  color: #0b315d;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.suggestion-button:hover {
+  background: #f4f9fd;
+
+  border-color:
+    rgba(11, 49, 93, 0.20);
+
+  transform: translateX(2px);
+
+  box-shadow:
+    0 5px 14px
+    rgba(7, 35, 65, 0.07);
+}
+
+.suggestion-button:hover svg {
+  transform: translateX(2px);
+}
+
+.suggestion-button:active {
+  transform: translateX(1px);
+}
+
+/* =========================================================
+   TYPING INDICATOR
+   ========================================================= */
+
+.typing-message {
+  min-width: 58px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 13px 14px;
+}
+
+.typing-dot {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #708195;
+
+  animation:
+    typingAnimation 1.2s
+    infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.30s;
+}
+
+@keyframes typingAnimation {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+
+  30% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   INPUT AREA
+   ========================================================= */
+
+.meghaai-chat-input-area {
+  flex-shrink: 0;
+
+  padding: 12px 15px 11px;
+
+  background: #ffffff;
+
+  border-top: 1px solid
+    rgba(11, 49, 93, 0.07);
+}
+
+/* =========================================================
+   INPUT WRAPPER
+   ========================================================= */
+
+.meghaai-chat-input-wrapper {
+  display: flex;
+  align-items: flex-end;
+
+  gap: 8px;
+
+  padding:
+    6px
+    6px
+    6px
+    13px;
+
+  border: 1px solid
+    rgba(11, 49, 93, 0.13);
+
+  border-radius: 15px;
+
+  background: #f9fbfd;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.meghaai-chat-input-wrapper:focus-within {
+  border-color:
+    rgba(11, 49, 93, 0.32);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(11, 49, 93, 0.06);
+}
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.meghaai-chat-input-wrapper textarea {
+  flex: 1;
+
+  min-width: 0;
+
+  min-height: 38px;
+  max-height: 100px;
+
+  resize: none;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: #21364d;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  line-height: 1.45;
+
+  padding: 9px 0;
+}
+
+.meghaai-chat-input-wrapper textarea::placeholder {
+  color: #8a99a9;
+}
+
+.meghaai-chat-input-wrapper textarea:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+.meghaai-chat-send {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 11px;
+
+  background: #0b315d;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.meghaai-chat-send svg {
+  width: 18px;
+  height: 18px;
+}
+
+.meghaai-chat-send:hover:not(:disabled) {
+  background: #124575;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px
+    rgba(11, 49, 93, 0.18);
+}
+
+.meghaai-chat-send:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.meghaai-chat-send:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.meghaai-chat-footer {
+  padding-top: 7px;
+
+  text-align: center;
+
+  color: #9aa7b5;
+
+  font-size: 9.5px;
+
+  line-height: 1.3;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .meghaai-chat-overlay {
+    padding: 20px;
+  }
+
+  .meghaai-chat-window {
+    width: min(
+      420px,
+      calc(100vw - 40px)
+    );
+
+    height: min(
+      670px,
+      calc(100vh - 40px)
+    );
+  }
+
+  .meghaai-floating-chat {
+    right: 22px;
+    bottom: 22px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .meghaai-floating-chat {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .floating-chat-button {
+    min-width: 54px;
+    width: 54px;
+    height: 54px;
+
+    padding: 0;
+
+    border-radius: 50%;
+  }
+
+  .meghaai-ai-gear {
+    width: 31px;
+    height: 31px;
+  }
+
+  .floating-chat-label {
+    display: none;
+  }
+
+  .floating-chat-pulse {
+    top: 3px;
+    right: 3px;
+  }
+
+  .meghaai-chat-overlay {
+    align-items: flex-end;
+    justify-content: center;
+
+    padding: 0;
+
+    background:
+      rgba(4, 18, 34, 0.18);
+  }
+
+  .meghaai-chat-window {
+    width: 100%;
+
+    height: 100dvh;
+
+    max-height: 100dvh;
+
+    min-height: 0;
+
+    border-radius: 0;
+
+    border: 0;
+
+    box-shadow: none;
+
+    animation:
+      mobileChatIn 0.28s
+      cubic-bezier(
+        0.16,
+        1,
+        0.3,
+        1
+      );
+  }
+
+  @keyframes mobileChatIn {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .meghaai-chat-header {
+    min-height: 78px;
+
+    padding:
+      13px
+      15px;
+
+    padding-top:
+      max(
+        13px,
+        env(safe-area-inset-top)
+      );
+  }
+
+  .meghaai-chat-logo {
+    width: 60px;
+    height: 41px;
+  }
+
+  .meghaai-chat-brand {
+    gap: 10px;
+  }
+
+  .meghaai-chat-brand-text h2 {
+    font-size: 14px;
+  }
+
+  .meghaai-chat-body {
+    padding:
+      18px
+      14px
+      16px;
+  }
+
+  .chat-message {
+    max-width: 82%;
+
+    font-size: 13px;
+  }
+
+  .chat-suggestions {
+    padding-left: 34px;
+  }
+
+  .suggestion-button {
+    padding: 10px;
+
+    font-size: 11.5px;
+  }
+
+  .meghaai-chat-input-area {
+    padding:
+      10px
+      12px
+      max(
+        10px,
+        env(safe-area-inset-bottom)
+      );
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .meghaai-floating-chat {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .floating-chat-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .meghaai-ai-gear {
+    width: 29px;
+    height: 29px;
+  }
+
+  .meghaai-chat-brand {
+    gap: 8px;
+  }
+
+  .meghaai-chat-logo {
+    width: 54px;
+    height: 38px;
+  }
+
+  .meghaai-chat-brand-text h2 {
+    font-size: 13px;
+  }
+
+  .meghaai-chat-status {
+    font-size: 10px;
+  }
+
+  .meghaai-chat-close {
+    width: 34px;
+    height: 34px;
+  }
+
+  .meghaai-chat-body {
+    padding:
+      16px
+      11px
+      14px;
+  }
+
+  .chat-message {
+    max-width: 86%;
+
+    padding:
+      10px
+      12px;
+
+    font-size: 12.5px;
+  }
+
+  .assistant-message-avatar {
+    width: 26px;
+    height: 26px;
+  }
+
+  .chat-suggestions {
+    padding-left: 31px;
+  }
+
+  .suggestions-heading {
+    font-size: 10.5px;
+  }
+
+  .suggestion-button {
+    font-size: 11px;
+
+    padding:
+      9px
+      10px;
+  }
+
+  .suggestion-button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .meghaai-chat-input-wrapper {
+    padding-left: 11px;
+  }
+
+  .meghaai-chat-input-wrapper textarea {
+    font-size: 12.5px;
+  }
+
+  .meghaai-chat-send {
+    width: 36px;
+    height: 36px;
+  }
+
+  .meghaai-chat-footer {
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   LANDSCAPE MOBILE
+   ========================================================= */
+
+@media (max-width: 900px)
+  and (orientation: landscape) {
+
+  .meghaai-chat-window {
+    height: 100dvh;
+
+    min-height: 0;
+
+    border-radius: 0;
+  }
+
+  .meghaai-chat-header {
+    min-height: 68px;
+
+    padding:
+      9px
+      14px;
+  }
+
+  .meghaai-chat-logo {
+    width: 54px;
+    height: 37px;
+  }
+
+  .meghaai-chat-body {
+    padding-top: 12px;
+  }
+
+  .meghaai-chat-input-area {
+    padding-top: 7px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.floating-chat-button:focus-visible,
+.meghaai-chat-close:focus-visible,
+.suggestion-button:focus-visible,
+.meghaai-chat-send:focus-visible {
+  outline: 2px solid #3c79aa;
+
+  outline-offset: 3px;
+}
+
+.meghaai-chat-input-wrapper textarea:focus-visible {
+  outline: none;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-chat-button,
+  .meghaai-chat-window,
+  .meghaai-chat-close,
+  .suggestion-button,
+  .suggestion-button svg,
+  .meghaai-chat-send {
+    transition: none;
+  }
+
+  .floating-chat-pulse,
+  .typing-dot {
+    animation: none;
+  }
 }

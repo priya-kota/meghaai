@@ -64,6 +64,14 @@ const CookieConsent = () => {
           >
             Reject all
           </button>
+          <button
+            type="button"
+            className="cookie-btn cookie-btn-manage"
+            onClick={openPreferences}
+            aria-label="Manage cookie preferences"
+          >
+            Manage preferences
+          </button>
         </div>
       </div>
 

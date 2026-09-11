@@ -1,1011 +1,578 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
+
+import meghaaiLogo from "../../assets/MeghaAI_Footer2.png";
 import "../../styles/floating-cta.css";
 
+const CHATBOT_API =
+  "https://meghaai-chatbot.onrender.com/api/chat";
+
+const suggestedQuestions = [
+  "How can MeghaAI prevent costly machine failures?",
+  "How does Structural Health Monitoring work? ",
+  "How are cobble events predicted?",
+  "What can vibration data reveal before a failure?",
+  "How can a Digital Twin help my plant?",
+];
+
+const initialMessage = {
+  role: "assistant",
+  content:
+    "Hi! I'm the MeghaAI Intelligence Assistant. 👋\n\nI can help you explore condition monitoring, predictive maintenance, vibration monitoring, Structural Health Monitoring, cobble prevention, and Digital Twins.",
+};
+
 function FloatingCTA() {
-  const [visible, setVisible] = useState(false);
-  const [bookingOpen, setBookingOpen] = useState(false);
-  const [bookingComplete, setBookingComplete] = useState(false);
-
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState("");
-
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    company: "",
-  });
-
-  const [currentMonth, setCurrentMonth] = useState(() => {
-    const today = new Date();
-
-    return new Date(
-      today.getFullYear(),
-      today.getMonth(),
-      1
-    );
-  });
-
   const location = useLocation();
 
-  /* =========================================================
-     PAGES WHERE FLOATING CTA SHOULD NOT APPEAR
-  ========================================================= */
+  const [visible, setVisible] = useState(true);
+  const [hideFloatingButton, setHideFloatingButton] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState([initialMessage]);
 
-  const hideFloatingCTA =
-    location.pathname === "/contact" ||
-    location.pathname === "/leadership";
+  const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
-  /* =========================================================
-     AVAILABLE DEMO TIMES
-  ========================================================= */
+  /* =========================================
+     OPEN / CLOSE
+  ========================================== */
 
-  const availableTimes = [
-    "10:00 AM",
-    "11:30 AM",
-    "2:00 PM",
-    "3:30 PM",
-    "4:30 PM",
-  ];
+  const openChat = () => {
+    setChatOpen(true);
+  };
 
-  /* =========================================================
-     HANDLE SCROLL
-  ========================================================= */
+  const closeChat = () => {
+    setChatOpen(false);
+    setMessage("");
+  };
+
+  /* =========================================
+     VISIBILITY
+  ========================================== */
 
   useEffect(() => {
-    if (hideFloatingCTA) {
-      setVisible(false);
+    setVisible(true);
+  }, [location.pathname]);
+
+  /* =========================================
+     AUTO SCROLL
+  ========================================== */
+
+  useEffect(() => {
+    if (!chatOpen) return;
+
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }, [messages, isLoading, chatOpen]);
+
+  /* =========================================
+     FOCUS INPUT
+  ========================================== */
+
+  useEffect(() => {
+    if (!chatOpen) return;
+
+    const timer = setTimeout(() => {
+      inputRef.current?.focus();
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, [chatOpen]);
+
+  /* =========================================
+     ESCAPE
+  ========================================== */
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape" && chatOpen) {
+        closeChat();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [chatOpen]);
+
+  /* =========================================
+     PREVENT BACKGROUND SCROLL
+  ========================================== */
+
+  useEffect(() => {
+    if (!chatOpen) {
+      document.body.style.overflow = "";
       return;
     }
 
-    const handleScroll = () => {
-      const threshold = Math.max(
-        450,
-        Math.round(window.innerHeight * 0.72)
-      );
-
-      const footer = document.querySelector("footer");
-
-      if (!footer) {
-        setVisible(window.scrollY > threshold);
-        return;
-      }
-
-      const footerRect = footer.getBoundingClientRect();
-
-      const footerVisible =
-        footerRect.top < window.innerHeight &&
-        footerRect.bottom > 0;
-
-      setVisible(
-        window.scrollY > threshold &&
-        !footerVisible
-      );
-    };
-
-    handleScroll();
-
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      {
-        passive: true,
-      }
-    );
-
-    window.addEventListener(
-      "resize",
-      handleScroll
-    );
-
-    return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
-
-      window.removeEventListener(
-        "resize",
-        handleScroll
-      );
-    };
-  }, [location.pathname, hideFloatingCTA]);
-
-  /* =========================================================
-     OPEN / CLOSE BOOKING MODAL
-  ========================================================= */
-
-  const openBooking = () => {
-    setBookingComplete(false);
-    setBookingOpen(true);
-
     document.body.style.overflow = "hidden";
-  };
 
-  const closeBooking = () => {
-    setBookingOpen(false);
-    setBookingComplete(false);
-
-    document.body.style.overflow = "";
-  };
-
-  useEffect(() => {
     return () => {
       document.body.style.overflow = "";
     };
-  }, []);
+  }, [chatOpen]);
 
-  /* =========================================================
-     GENERATE CALENDAR DAYS
-  ========================================================= */
+  /* =========================================
+   HIDE BUTTON ON HERO + FOOTER
+========================================== */
 
-  const calendarDays = useMemo(() => {
-    const year = currentMonth.getFullYear();
-    const month = currentMonth.getMonth();
-
-    const firstDay = new Date(
-      year,
-      month,
-      1
+  useEffect(() => {
+    const hero = document.querySelector(
+      "#hero, .hero-section, .home-hero, .hero"
     );
 
-    const lastDay = new Date(
-      year,
-      month + 1,
-      0
+    const footer = document.querySelector(
+      "footer, .footer, .site-footer"
     );
 
-    const startingDay = firstDay.getDay();
-    const totalDays = lastDay.getDate();
-
-    const days = [];
-
-    // Empty cells before month starts
-    for (
-      let i = 0;
-      i < startingDay;
-      i++
-    ) {
-      days.push(null);
+    if (!hero && !footer) {
+      return;
     }
 
-    // Actual days
-    for (
-      let day = 1;
-      day <= totalDays;
-      day++
-    ) {
-      days.push(
-        new Date(
-          year,
-          month,
-          day
-        )
-      );
-    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const sectionVisible = entries.some(
+          (entry) => entry.isIntersecting
+        );
 
-    return days;
-  }, [currentMonth]);
-
-  /* =========================================================
-     DATE HELPERS
-  ========================================================= */
-
-  const today = new Date();
-
-  today.setHours(0, 0, 0, 0);
-
-  const isSameDay = (
-    date1,
-    date2
-  ) => {
-    if (!date1 || !date2) {
-      return false;
-    }
-
-    return (
-      date1.getFullYear() ===
-        date2.getFullYear() &&
-      date1.getMonth() ===
-        date2.getMonth() &&
-      date1.getDate() ===
-        date2.getDate()
-    );
-  };
-
-  const isPastDate = (date) => {
-    if (!date) {
-      return true;
-    }
-
-    const normalized =
-      new Date(date);
-
-    normalized.setHours(
-      0,
-      0,
-      0,
-      0
-    );
-
-    return normalized < today;
-  };
-
-  /* =========================================================
-     WEEKEND CHECK
-  ========================================================= */
-
-  const isWeekend = (date) => {
-    if (!date) {
-      return true;
-    }
-
-    const day = date.getDay();
-
-    return (
-      day === 0 ||
-      day === 6
-    );
-  };
-
-  /* =========================================================
-     DATE AVAILABILITY
-  ========================================================= */
-
-  const isDateAvailable = (date) => {
-    return (
-      date &&
-      !isPastDate(date) &&
-      !isWeekend(date)
-    );
-  };
-
-  /* =========================================================
-     FORMAT SELECTED DATE
-  ========================================================= */
-
-  const formatSelectedDate = () => {
-    if (!selectedDate) {
-      return "";
-    }
-
-    return selectedDate.toLocaleDateString(
-      "en-US",
+        setHideFloatingButton(sectionVisible);
+      },
       {
-        weekday: "long",
-        month: "long",
-        day: "numeric",
-        year: "numeric",
+        threshold: 0.05,
       }
     );
-  };
 
-  /* =========================================================
-     MONTH NAVIGATION
-  ========================================================= */
+    if (hero) {
+      observer.observe(hero);
+    }
 
-  const goToPreviousMonth = () => {
-    const previousMonth =
-      new Date(
-        currentMonth.getFullYear(),
-        currentMonth.getMonth() - 1,
-        1
-      );
+    if (footer) {
+      observer.observe(footer);
+    }
 
-    const currentMonthStart =
-      new Date(
-        today.getFullYear(),
-        today.getMonth(),
-        1
-      );
+    return () => {
+      observer.disconnect();
+    };
+  }, [location.pathname]);
 
-    if (
-      previousMonth <
-      currentMonthStart
-    ) {
+  /* =========================================
+     SEND MESSAGE
+  ========================================== */
+
+  const sendMessage = async (question = null) => {
+    const text = (question ?? message).trim();
+
+    if (!text || isLoading) {
       return;
     }
 
-    setCurrentMonth(
-      previousMonth
-    );
+    setMessages((previous) => [
+      ...previous,
+      {
+        role: "user",
+        content: text,
+      },
+    ]);
 
-    setSelectedDate(null);
-    setSelectedTime("");
-  };
+    setMessage("");
+    setIsLoading(true);
 
-  const goToNextMonth = () => {
-    setCurrentMonth(
-      new Date(
-        currentMonth.getFullYear(),
-        currentMonth.getMonth() + 1,
-        1
-      )
-    );
+    try {
+      const response = await fetch(CHATBOT_API, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: text,
+        }),
+      });
 
-    setSelectedDate(null);
-    setSelectedTime("");
-  };
+      if (!response.ok) {
+        throw new Error(
+          `Request failed with status ${response.status}`
+        );
+      }
 
-  /* =========================================================
-     SELECT DATE
-  ========================================================= */
+      const data = await response.json();
 
-  const handleDateSelect = (
-    date
-  ) => {
-    if (!isDateAvailable(date)) {
-      return;
-    }
+      if (!data.success) {
+        throw new Error(
+          data.error || "Unable to get a response."
+        );
+      }
 
-    setSelectedDate(date);
-    setSelectedTime("");
-  };
-
-  /* =========================================================
-     FORM INPUT HANDLING
-  ========================================================= */
-
-  const handleInputChange = (
-    event
-  ) => {
-    const {
-      name,
-      value,
-    } = event.target;
-
-    setFormData(
-      (previous) => ({
+      setMessages((previous) => [
         ...previous,
-        [name]: value,
-      })
-    );
-  };
+        {
+          role: "assistant",
+          content:
+            data.answer ||
+            "I don't have that information from the MeghaAI website.",
+        },
+      ]);
+    } catch (error) {
+      console.error("MeghaAI chatbot error:", error);
 
-  /* =========================================================
-     SUBMIT BOOKING
-     
-     MAILTO VERSION
-     
-     Opens the user's email composer with:
-     
-     To:
-     support@meghaai.in
-     
-     Subject:
-     New Demo Request
-  ========================================================= */
-
-  const handleBookingSubmit = (
-    event
-  ) => {
-    event.preventDefault();
-
-    /* -----------------------------------------
-       CHECK DATE
-    ----------------------------------------- */
-
-    if (
-      !selectedDate ||
-      !selectedTime
-    ) {
-      return;
+      setMessages((previous) => [
+        ...previous,
+        {
+          role: "assistant",
+          content:
+            "Sorry, I couldn't connect right now. Please try again in a moment.",
+        },
+      ]);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-    /* -----------------------------------------
-       CHECK REQUIRED FORM FIELDS
-    ----------------------------------------- */
+  /* =========================================
+     INPUT
+  ========================================== */
 
-    if (
-      !formData.fullName.trim() ||
-      !formData.email.trim() ||
-      !formData.company.trim()
-    ) {
-      return;
+  const handleInputKeyDown = (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      sendMessage();
     }
-
-    /* -----------------------------------------
-       EMAIL SUBJECT
-    ----------------------------------------- */
-
-    const subject =
-      "New Demo Request";
-
-    /* -----------------------------------------
-       EMAIL BODY
-    ----------------------------------------- */
-
-    const body = `New Demo Request
-
-Full Name: ${formData.fullName}
-Work Email: ${formData.email}
-Company Name: ${formData.company}
-
-Requested Demo Date: ${formatSelectedDate()}
-Requested Demo Time: ${selectedTime}
-`;
-
-    /* -----------------------------------------
-       CREATE MAILTO LINK
-    ----------------------------------------- */
-
-    const mailtoLink =
-      `mailto:support@meghaai.in` +
-      `?subject=${encodeURIComponent(
-        subject
-      )}` +
-      `&body=${encodeURIComponent(
-        body
-      )}`;
-
-    /* -----------------------------------------
-       OPEN EMAIL COMPOSER
-    ----------------------------------------- */
-
-    window.location.href =
-      mailtoLink;
-
-    /* -----------------------------------------
-       SHOW CONFIRMATION
-    ----------------------------------------- */
-
-    setBookingComplete(true);
   };
 
-  /* =========================================================
-     RESET BOOKING
-  ========================================================= */
-
-  const startNewBooking = () => {
-    setBookingComplete(false);
-
-    setSelectedDate(null);
-
-    setSelectedTime("");
-
-    setFormData({
-      fullName: "",
-      email: "",
-      company: "",
-    });
+  const handleSuggestionClick = (question) => {
+    sendMessage(question);
   };
 
-  /* =========================================================
-     DO NOT RENDER CTA ON:
-     
-     /contact
-     /leadership
-  ========================================================= */
-
-  if (hideFloatingCTA) {
+  if (!visible) {
     return null;
   }
 
   return (
     <>
-      {/* =====================================================
-          DESKTOP FLOATING CTA
-      ===================================================== */}
+      {/* =========================================
+          FLOATING ASK US BUTTON
+      ========================================== */}
 
-      <button
-        type="button"
-        className={`floating-cta floating-cta-desktop ${
-          visible
-            ? "is-visible"
-            : ""
-        }`}
-        onClick={openBooking}
-        aria-label="Chat with Us - Schedule a Demo"
-      >
-        <span className="floating-cta-title">
-          Chat with Us
-        </span>
-
-        <span className="floating-cta-subtitle">
-          Questions? We&apos;re here to help
-        </span>
-      </button>
-
-
-      {/* =====================================================
-          MOBILE STICKY CTA
-      ===================================================== */}
-
-      <div
-        className={`floating-cta-mobile-wrap ${
-          visible
-            ? "is-visible"
-            : ""
-        }`}
-      >
-        <button
-          type="button"
-          className="floating-cta-mobile"
-          onClick={openBooking}
-          aria-label="Schedule Free Demo"
-        >
-          <span>
-            SCHEDULE FREE DEMO
-          </span>
-
-          <span
-            className="floating-cta-arrow"
-            aria-hidden="true"
+      {!hideFloatingButton && (
+        <div className="meghaai-floating-chat">
+          <button
+            type="button"
+            className="floating-chat-button"
+            onClick={openChat}
+            aria-label="Ask Us"
+            aria-expanded={chatOpen}
           >
-            →
-          </span>
-        </button>
-      </div>
+            {/* AI INSIDE GEAR */}
+            <svg
+              className="meghaai-ai-gear"
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              {/* Gear */}
+              <path
+                d="
+                M57 35.5
+                V28.5
+                L51.8 27.3
+                C51.3 25.6 50.6 24 49.7 22.5
+                L52.7 18.1
+                L47.8 13.2
+                L43.5 16.2
+                C42 15.3 40.3 14.6 38.6 14.1
+                L37.4 9
+                H30.5
+                L29.3 14.1
+                C27.6 14.6 26 15.3 24.5 16.2
+                L20.2 13.2
+                L15.3 18.1
+                L18.3 22.5
+                C17.4 24 16.7 25.6 16.2 27.3
+                L11 28.5
+                V35.5
+                L16.2 36.7
+                C16.7 38.4 17.4 40 18.3 41.5
+                L15.3 45.9
+                L20.2 50.8
+                L24.5 47.8
+                C26 48.7 27.6 49.4 29.3 49.9
+                L30.5 55
+                H37.4
+                L38.6 49.9
+                C40.3 49.4 42 48.7 43.5 47.8
+                L47.8 50.8
+                L52.7 45.9
+                L49.7 41.5
+                C50.6 40 51.3 38.4 51.8 36.7
+                L57 35.5Z
+              "
+                fill="currentColor"
+              />
 
+              {/* Inner circle */}
+              <circle
+                cx="34"
+                cy="32"
+                r="17"
+                fill="#1E8FE1"
+              />
 
-      {/* =====================================================
-          BOOKING MODAL
-      ===================================================== */}
-
-      {bookingOpen && (
-        <div
-          className="demo-booking-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="demo-booking-title"
-          onMouseDown={(event) => {
-            if (
-              event.target ===
-              event.currentTarget
-            ) {
-              closeBooking();
-            }
-          }}
-        >
-
-          <div className="demo-booking-modal">
-
-            {/* =================================================
-                HEADER
-            ================================================= */}
-
-            <div className="demo-booking-header">
-
-              <div>
-
-                <span className="demo-booking-eyebrow">
-                  MEGHAAI DEMO
-                </span>
-
-                <h2 id="demo-booking-title">
-                  Schedule a Demo
-                </h2>
-
-                {!bookingComplete && (
-                  <p>
-                    Choose a convenient
-                    time to see
-                    MeghaAI in action.
-                  </p>
-                )}
-
-              </div>
-
-
-              <button
-                type="button"
-                className="demo-booking-close"
-                onClick={closeBooking}
-                aria-label="Close booking window"
+              {/* AI */}
+              <text
+                x="34"
+                y="37"
+                textAnchor="middle"
+                fontSize="13"
+                fontWeight="800"
+                fontFamily="Arial, Helvetica, sans-serif"
+                fill="#ffffff"
               >
-                ×
-              </button>
-
-            </div>
-
-
-            {/* =================================================
-                SUCCESS
-            ================================================= */}
-
-            {bookingComplete ? (
-
-              <div className="demo-booking-success">
-
-                <div className="demo-booking-success-icon">
-                  ✓
-                </div>
-
-                <h3>
-                  Demo Request Ready
-                </h3>
-
-                <p>
-                  Thanks,{" "}
-                  {formData.fullName}.
-                </p>
-
-                <p>
-                  Your requested demo
-                  time is:
-                </p>
-
-                <strong>
-                  {formatSelectedDate()}
-                </strong>
-
-                <strong>
-                  {selectedTime}
-                </strong>
-
-                <p className="demo-booking-success-note">
-                  Your email composer has
-                  been opened with your
-                  demo request. Please click
-                  Send to complete your
-                  request.
-                </p>
-
-                <button
-                  type="button"
-                  className="demo-booking-primary"
-                  onClick={closeBooking}
-                >
-                  DONE
-                </button>
-
-                <button
-                  type="button"
-                  className="demo-booking-secondary"
-                  onClick={
-                    startNewBooking
-                  }
-                >
-                  BOOK ANOTHER TIME
-                </button>
-
-              </div>
-
-            ) : (
-
-              <div className="demo-booking-body">
-
-                {/* =============================================
-                    CALENDAR
-                ============================================= */}
-
-                <div className="demo-calendar">
-
-                  <div className="demo-calendar-heading">
-
-                    <button
-                      type="button"
-                      onClick={
-                        goToPreviousMonth
-                      }
-                      className="demo-calendar-nav"
-                      aria-label="Previous month"
-                    >
-                      ‹
-                    </button>
-
-                    <strong>
-                      {currentMonth.toLocaleDateString(
-                        "en-US",
-                        {
-                          month:
-                            "long",
-                          year:
-                            "numeric",
-                        }
-                      )}
-                    </strong>
-
-                    <button
-                      type="button"
-                      onClick={
-                        goToNextMonth
-                      }
-                      className="demo-calendar-nav"
-                      aria-label="Next month"
-                    >
-                      ›
-                    </button>
-
-                  </div>
-
-
-                  <div className="demo-calendar-weekdays">
-
-                    {[
-                      "Sun",
-                      "Mon",
-                      "Tue",
-                      "Wed",
-                      "Thu",
-                      "Fri",
-                      "Sat",
-                    ].map(
-                      (day) => (
-                        <span
-                          key={day}
-                        >
-                          {day}
-                        </span>
-                      )
-                    )}
-
-                  </div>
-
-
-                  <div className="demo-calendar-grid">
-
-                    {calendarDays.map(
-                      (
-                        date,
-                        index
-                      ) => {
-
-                        if (!date) {
-                          return (
-                            <span
-                              key={`empty-${index}`}
-                              className="demo-calendar-empty"
-                            />
-                          );
-                        }
-
-                        const unavailable =
-                          !isDateAvailable(
-                            date
-                          );
-
-                        const selected =
-                          isSameDay(
-                            date,
-                            selectedDate
-                          );
-
-                        const todayDate =
-                          isSameDay(
-                            date,
-                            today
-                          );
-
-                        return (
-                          <button
-                            type="button"
-                            key={date.toISOString()}
-                            className={`
-                              demo-calendar-day
-                              ${
-                                selected
-                                  ? "selected"
-                                  : ""
-                              }
-                              ${
-                                todayDate
-                                  ? "today"
-                                  : ""
-                              }
-                              ${
-                                unavailable
-                                  ? "unavailable"
-                                  : ""
-                              }
-                            `}
-                            disabled={
-                              unavailable
-                            }
-                            onClick={() =>
-                              handleDateSelect(
-                                date
-                              )
-                            }
-                          >
-                            {date.getDate()}
-                          </button>
-                        );
-                      }
-                    )}
-
-                  </div>
-
-
-                  <div className="demo-calendar-note">
-                    Demo availability
-                    is currently
-                    Monday–Friday.
-                  </div>
-
-                </div>
-
-
-                {/* =============================================
-                    BOOKING DETAILS
-                ============================================= */}
-
-                <div className="demo-booking-details">
-
-                  {/* ===========================================
-                      TIME
-                  =========================================== */}
-
-                  <div className="demo-booking-section">
-
-                    <h3>
-                      1. Choose a time
-                    </h3>
-
-                    {!selectedDate ? (
-
-                      <p className="demo-booking-helper">
-                        Select a date from
-                        the calendar to
-                        view available
-                        times.
-                      </p>
-
-                    ) : (
-
-                      <>
-                        <p className="demo-booking-selected-date">
-                          {formatSelectedDate()}
-                        </p>
-
-                        <div className="demo-time-grid">
-
-                          {availableTimes.map(
-                            (time) => (
-
-                              <button
-                                type="button"
-                                key={time}
-                                className={`
-                                  demo-time-slot
-                                  ${
-                                    selectedTime ===
-                                    time
-                                      ? "selected"
-                                      : ""
-                                  }
-                                `}
-                                onClick={() =>
-                                  setSelectedTime(
-                                    time
-                                  )
-                                }
-                              >
-                                {time}
-                              </button>
-
-                            )
-                          )}
-
-                        </div>
-
-                      </>
-                    )}
-
-                  </div>
-
-
-                  {/* ===========================================
-                      USER DETAILS
-                  =========================================== */}
-
-                  <form
-                    className="demo-booking-form"
-                    onSubmit={
-                      handleBookingSubmit
-                    }
-                  >
-
-                    <h3>
-                      2. Your details
-                    </h3>
-
-
-                    <label>
-
-                      <span>
-                        Full Name
-                      </span>
-
-                      <input
-                        type="text"
-                        name="fullName"
-                        value={
-                          formData.fullName
-                        }
-                        onChange={
-                          handleInputChange
-                        }
-                        placeholder="Enter your full name"
-                        autoComplete="name"
-                        required
-                      />
-
-                    </label>
-
-
-                    <label>
-
-                      <span>
-                        Work Email
-                      </span>
-
-                      <input
-                        type="email"
-                        name="email"
-                        value={
-                          formData.email
-                        }
-                        onChange={
-                          handleInputChange
-                        }
-                        placeholder="name@company.com"
-                        autoComplete="email"
-                        required
-                      />
-
-                    </label>
-
-
-                    <label>
-
-                      <span>
-                        Company Name
-                      </span>
-
-                      <input
-                        type="text"
-                        name="company"
-                        value={
-                          formData.company
-                        }
-                        onChange={
-                          handleInputChange
-                        }
-                        placeholder="Your company"
-                        autoComplete="organization"
-                        required
-                      />
-
-                    </label>
-
-
-                    <button
-                      type="submit"
-                      className="demo-booking-primary"
-                      disabled={
-                        !selectedDate ||
-                        !selectedTime
-                      }
-                    >
-                      BOOK MY DEMO
-
-                      <span>
-                        →
-                      </span>
-                    </button>
-
-
-                    <p className="demo-booking-privacy">
-                      No credit card
-                      required. Your
-                      information is kept
-                      confidential.
-                    </p>
-
-                  </form>
-
-                </div>
-
-              </div>
-
-            )}
-
-          </div>
-
+                AI
+              </text>
+            </svg>
+
+            <span className="floating-chat-label">
+              Ask Us
+            </span>
+
+            <span className="floating-chat-pulse" />
+          </button>
         </div>
       )}
 
+      {/* =========================================
+          CHATBOT
+      ========================================== */}
+
+      {chatOpen && (
+        <div
+          className="meghaai-chat-overlay"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              closeChat();
+            }
+          }}
+        >
+          <section
+            className="meghaai-chat-window"
+            aria-label="MeghaAI Intelligence Assistant"
+          >
+            {/* =================================
+                HEADER
+            ================================== */}
+
+            <header className="meghaai-chat-header">
+              <div className="meghaai-chat-brand">
+                <div className="meghaai-chat-logo">
+                  <img
+                    src={meghaaiLogo}
+                    alt="MeghaAI"
+                  />
+                </div>
+
+                <div className="meghaai-chat-brand-text">
+                  <h2>MeghaAI Intelligence Assistant</h2>
+
+                  <div className="meghaai-chat-status">
+                    <span className="status-dot" />
+                    <span>Online</span>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className="meghaai-chat-close"
+                onClick={closeChat}
+                aria-label="Close chatbot"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 6L18 18M18 6L6 18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </button>
+            </header>
+
+            {/* =================================
+                CHAT BODY
+            ================================== */}
+
+            <div className="meghaai-chat-body">
+              {messages.map((item, index) => (
+                <div
+                  key={`${item.role}-${index}`}
+                  className={`chat-message-row ${item.role === "user"
+                      ? "user-message-row"
+                      : "assistant-message-row"
+                    }`}
+                >
+                  {item.role === "assistant" && (
+                    <div className="assistant-message-avatar">
+                      <img
+                        src={meghaaiLogo}
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </div>
+                  )}
+
+                  <div
+                    className={`chat-message ${item.role === "user"
+                        ? "user-message"
+                        : "assistant-message"
+                      }`}
+                  >
+                    {item.content
+                      .split("\n")
+                      .map((line, lineIndex) => (
+                        <span
+                          key={lineIndex}
+                          className="chat-message-line"
+                        >
+                          {line || "\u00A0"}
+                        </span>
+                      ))}
+                  </div>
+                </div>
+              ))}
+
+              {/* =================================
+                  SUGGESTED QUESTIONS
+              ================================== */}
+
+              {messages.length === 1 && !isLoading && (
+                <div className="chat-suggestions">
+                  <div className="suggestions-heading">
+                    Explore what's possible
+                  </div>
+
+                  <div className="suggestion-list">
+                    {suggestedQuestions.map((question) => (
+                      <button
+                        key={question}
+                        type="button"
+                        className="suggestion-button"
+                        onClick={() =>
+                          handleSuggestionClick(question)
+                        }
+                      >
+                        <span>{question}</span>
+
+                        <svg
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M4 10H15M11 6L15 10L11 14"
+                            stroke="currentColor"
+                            strokeWidth="1.7"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* =================================
+                  TYPING INDICATOR
+              ================================== */}
+
+              {isLoading && (
+                <div className="chat-message-row assistant-message-row">
+                  <div className="assistant-message-avatar">
+                    <img
+                      src={meghaaiLogo}
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  <div className="chat-message assistant-message typing-message">
+                    <span className="typing-dot" />
+                    <span className="typing-dot" />
+                    <span className="typing-dot" />
+                  </div>
+                </div>
+              )}
+
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* =================================
+                TEXT CHAT INPUT ONLY
+            ================================== */}
+
+            <div className="meghaai-chat-input-area">
+              <div className="meghaai-chat-input-wrapper">
+                <textarea
+                  ref={inputRef}
+                  value={message}
+                  onChange={(event) =>
+                    setMessage(event.target.value)
+                  }
+                  onKeyDown={handleInputKeyDown}
+                  placeholder="Ask about MeghaAI..."
+                  rows={1}
+                  disabled={isLoading}
+                  aria-label="Message"
+                />
+
+                <button
+                  type="button"
+                  className="meghaai-chat-send"
+                  onClick={() => sendMessage()}
+                  disabled={
+                    !message.trim() || isLoading
+                  }
+                  aria-label="Send message"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M21 3L10 14"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+
+                    <path
+                      d="M21 3L14 21L10 14L3 10L21 3Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <div className="meghaai-chat-footer">
+                Answers are based on MeghaAI website information.
+              </div>
+            </div>
+          </section>
+        </div>
+      )}
     </>
   );
 }
