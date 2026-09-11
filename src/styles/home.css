@@ -3903,6 +3903,20 @@ span:last-child {
   transform: none;
 }
 
+.home-page .home-hero-proof-logos .customer-logo-c4-emphasis-card,
+.home-page .home-hero-proof-logos .customer-logo-c5-emphasis-card {
+  width: clamp(130px, 12vw, 152px);
+  height: clamp(64px, 6vw, 78px);
+}
+
+.home-page .home-hero-proof-logos .customer-logo-c4,
+.home-page .home-hero-proof-logos .customer-logo-c5 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1.08);
+}
+
 .home-page .home-hero-proof-logos .customer-logo-high-contrast {
   display: inline-flex;
   align-items: center;
@@ -3927,6 +3941,48 @@ span:last-child {
   flex: 0 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .home-page .home-hero-proof-logos {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .home-page .home-hero-proof-logos img,
+  .home-page .home-hero-proof-logos .customer-logo-emphasis-card {
+    width: clamp(92px, 13vw, 120px);
+    height: clamp(50px, 7vw, 66px);
+  }
+
+  .home-page .home-hero-proof-logos .customer-logo-c4-emphasis-card,
+  .home-page .home-hero-proof-logos .customer-logo-c5-emphasis-card {
+    width: clamp(108px, 16vw, 136px);
+    height: clamp(56px, 8vw, 72px);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .home-hero-proof > span {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .home-page .home-hero-proof-logos {
+    gap: 12px 14px;
+  }
+
+  .home-page .home-hero-proof-logos img,
+  .home-page .home-hero-proof-logos .customer-logo-emphasis-card {
+    width: clamp(78px, 24vw, 112px);
+    height: clamp(42px, 10vw, 58px);
+  }
+
+  .home-page .home-hero-proof-logos .customer-logo-c4-emphasis-card,
+  .home-page .home-hero-proof-logos .customer-logo-c5-emphasis-card {
+    width: clamp(94px, 28vw, 128px);
+    height: clamp(48px, 12vw, 68px);
+  }
+}
+
 @media (max-width: 640px) {
   .home-page .home-hero {
     min-height: auto;
@@ -3940,6 +3996,23 @@ span:last-child {
 
   .home-page .home-hero-actions a {
     width: 100%;
+  }
+
+  .home-page .home-hero-proof-logos {
+    justify-content: flex-start;
+    gap: 10px 12px;
+  }
+
+  .home-page .home-hero-proof-logos img,
+  .home-page .home-hero-proof-logos .customer-logo-emphasis-card {
+    width: clamp(70px, 28vw, 90px);
+    height: clamp(38px, 12vw, 48px);
+  }
+
+  .home-page .home-hero-proof-logos .customer-logo-c4-emphasis-card,
+  .home-page .home-hero-proof-logos .customer-logo-c5-emphasis-card {
+    width: clamp(82px, 32vw, 106px);
+    height: clamp(44px, 14vw, 58px);
   }
 }
 
@@ -3983,7 +4056,7 @@ span:last-child {
 
 .home-page .home-problem h2 {
   max-width: none;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .home-page .home-problem-lead,

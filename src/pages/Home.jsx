@@ -14,8 +14,8 @@ import c2 from "../assets/customers/c2.png";
 import c3 from "../assets/customers/c3.png";
 import c4 from "../assets/customers/c4.png";
 import c5 from "../assets/customers/c5.png";
-import c6 from "../assets/customers/c6.png";
-import c7 from "../assets/customers/c7.png";
+// import c6 from "../assets/customers/c6.png";
+// import c7 from "../assets/customers/c7.png";
 
 import factories from "../assets/home/factories.jpeg";
 import plants from "../assets/home/plants.jpeg";
@@ -102,7 +102,7 @@ function Home() {
 
           <div className="home-hero-proof">
             <span>
-              Trusted by Bharat Petrolum,ASA Bhanu, Fort Wayne Metals, JSW Steel, Cummins, Ion Exchange &amp; 10+ Enterprise
+              Trusted by Bharat Petrolum, JSW Steel, Cummins, Ion Exchange &amp; 10+ Enterprise
               Leaders
             </span>
 
@@ -119,18 +119,20 @@ function Home() {
               alt="Customer 3" 
               />
               </span>
-              <span className="customer-logo-emphasis-card">
+              <span className="customer-logo-emphasis-card customer-logo-c4-emphasis-card">
                 <img 
                 src={c4} 
-                alt="Customer 4" />
+                alt="Customer 4"
+                className="customer-logo-c4" />
               </span>
-            <span className="customer-logo-emphasis-card">
+            <span className="customer-logo-emphasis-card customer-logo-c5-emphasis-card">
               <img 
               src={c5} 
-              alt="Customer 5" 
+              alt="Customer 5"
+              className="customer-logo-c5" 
               />
             </span>
-              <img 
+              {/* <img 
               src={c6} 
               alt="Customer 6"
               className="customer-logo-large customer-logo-c6"
@@ -139,7 +141,7 @@ function Home() {
               src={c7} 
               alt="Customer 7"
               className="customer-logo-large"
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -515,6 +517,29 @@ function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* =====================================================
+          CORE IP
+          ===================================================== */}
+      <section className="home-core-ip reveal">
+
+        <p>
+
+          Our core IP combines{" "}
+
+          <span className="core-ip-highlight">
+            engineering knowledge, analysis data,
+            industrial data, physics, multimodal observations
+            and AI
+          </span>{" "}
+
+          to infer the hidden state of physical systems,
+          understand how that state evolves and predict failure,
+          degradation or instability.
+
+        </p>
+
       </section>
       {/* =====================================================
           WHY MEGHAAI
